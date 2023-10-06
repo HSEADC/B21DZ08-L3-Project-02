@@ -1,5 +1,3 @@
-class PinImageUploader < CarrierWave::Uploader::Base
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,18 @@ class PinImageUploader < CarrierWave::Uploader::Base
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_05_191306) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_06_122123) do
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "article_tag"
+    t.text "body"
+    t.string "article_imge"
+    t.integer "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "post_id"
