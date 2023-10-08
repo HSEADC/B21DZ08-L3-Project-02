@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @plant %>
+
+<%= link_to "New comment", new_plant_comment_path(@plant) %>
+
 <h2>Comments:</h2>
 <%= render @plant.comments %>
 

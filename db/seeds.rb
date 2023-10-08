@@ -11,7 +11,7 @@
 
 def seed
   reset_db
-  create_plants(10)
+  create_plants(50)
   create_comments(2..8)
 end
 
@@ -31,9 +31,15 @@ def create_sentence
   sentence = sentence_words.join(' ').capitalize + '.'
 end
 
+def upload_random_image
+    uploader = PlantImageUploader.new(Plant.new, :plant_image)
+    uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/autoupload/plants', '*')).sample))
+    uploader
+  end
+
 def create_plants(quantity)
   quantity.times do
-    plant = Plant.create(name: create_sentence, description: create_sentence)
+    plant = Plant.create(name: create_sentence, description: create_sentence, plant_image: upload_random_image)
     puts "Plant with id #{plant.id} just created"
   end
 end
