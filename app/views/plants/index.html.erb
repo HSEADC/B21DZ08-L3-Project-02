@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Plants</h1>
+
+<div id="plant">
+  <% @plants.each do |plant| %>
+
+    <%= link_to plant, class: 'plantCard' do %>
+      <%= render plant %>
+
+      <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New plant", new_plant_path %>
