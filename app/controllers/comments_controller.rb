@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @plant = Plant.find(params[:plant_id])
   end
 
   # POST /comments or /comments.json
@@ -38,9 +39,11 @@ class CommentsController < ApplicationController
 
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
+    plant = Plant.find(params[:plant_id])
+
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully updated." }
+        format.html { redirect_to plant_url(plant), notice: "Comment was successfully updated." }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
