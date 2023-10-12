@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_plant, only: %i[ show edit update destroy ]
 
   # GET /plants or /plants.json

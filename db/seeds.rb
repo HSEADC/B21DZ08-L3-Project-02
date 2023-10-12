@@ -11,6 +11,7 @@
 
 def seed
   reset_db
+  create_users
   create_plants(50)
   create_comments(2..8)
 end
@@ -19,6 +20,27 @@ def reset_db
   Rake::Task['db:drop'].invoke
   Rake::Task['db:create'].invoke
   Rake::Task['db:migrate'].invoke
+end
+
+def create_users
+  i = 0
+
+  10.times do
+    user_data = {
+      email: "user_#{i}@email.com",
+      password: 'testtest'
+    }
+
+    # if i == 0
+    #    user_data[:email] = "admin@email.com"
+    #    user_data[:admin] = true
+    #  end
+
+    user = User.create!(user_data)
+    puts "User created with id #{user.id}"
+
+    i += 1
+  end
 end
 
 def create_sentence
@@ -39,7 +61,8 @@ def upload_random_image
 
 def create_plants(quantity)
   quantity.times do
-    plant = Plant.create(name: create_sentence, description: create_sentence, plant_image: upload_random_image)
+    user = User.all.sample
+    plant = Plant.create(name: create_sentence, description: create_sentence, plant_image: upload_random_image, user_id: user.id)
     puts "Plant with id #{plant.id} just created"
   end
 end
@@ -47,7 +70,8 @@ end
 def create_comments(quantity)
   Plant.all.each do |plant|
     quantity.to_a.sample.times do
-      comment = Comment.create(plant_id: plant.id, body: create_sentence)
+      user = User.all.sample
+      comment = Comment.create(plant_id: plant.id, body: create_sentence, user_id: user.id)
       puts "Comment with id #{comment.id} for plant with id #{comment.plant.id} just created"
     end
   end

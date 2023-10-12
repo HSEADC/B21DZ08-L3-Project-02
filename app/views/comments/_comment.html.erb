@@ -1,19 +1,19 @@
 <div id="<%= dom_id comment %>">
   <p>
-    <strong>Body:</strong>
+    <strong>
+    <%= comment.user.email %>
+    </strong>
+  </p>
+  
+  <p>
     <%= comment.body %>
   </p>
-
-  <p>
-    <strong>Plant:</strong>
-    <%= comment.plant_id %>
-  </p>
-
 </div>
 
-
-<div>
-  <%= link_to "Edit this comment", edit_plant_comment_path(@plant, comment) %>
-  <%= button_to "Destroy this comment", comment, method: :delete %>
-</div>
+<% if can? :manage, comment %>
+  <div>
+    <%= link_to "Edit this comment", edit_plant_comment_path(@plant, comment) %>
+    <%= button_to "Destroy this comment", [@plant, comment], method: :delete %>
+  </div>
+<% end %>
 

@@ -1,11 +1,17 @@
 .plantCard {
-    width: 500px;
-    /* height: 120px; */
-    padding: 20px;
-    border: 1px solid grey;
-    border-radius: 16px;
-    margin: 20px;
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-  }
+  width: 500px;
+  /* height: 120px; */
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 16px;
+  margin: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}

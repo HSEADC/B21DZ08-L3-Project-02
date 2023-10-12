@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :comments
+  devise_for :users
 
   resources :plants do
-    resources :comments
+    resources :comments, except: :show
   end
 
 
