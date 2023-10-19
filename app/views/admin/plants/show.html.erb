@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @plant %>
+
+<%= link_to "New Comment", new_admin_plant_comment_path(@plant) %>
+
+<h2>Comments</h2>
+
+<%= render @plant.comments %>
+
+<div>
+  <%= link_to "Edit this plant", edit_admin_plant_path(@plant) %> |
+  <%= link_to "Back to plant", admin_plants_path %>
+
+  <%= button_to "Destroy this plant", [:admin, @plant], method: :delete %>
+</div>

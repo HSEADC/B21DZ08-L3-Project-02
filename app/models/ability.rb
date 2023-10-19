@@ -4,14 +4,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Plant
-    can :read, Comment
-    can :new, Comment
-    can :create, Comment
+      if user && user.admin == true
+      can :manage, :all
+      
+  end
 
-    if user
-     can :manage, Comment, user_id: user.id
-    end 
+      # if user
+      #   can :manage, Plant, user_id: user.id
+      #   can :manage, Comment, user_id: user.id
+      # end 
 
     # can :edit, Comment, user_id: user.id
     # can :update, Comment, user_id: user.id

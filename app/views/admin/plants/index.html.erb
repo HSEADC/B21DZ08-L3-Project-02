@@ -2,12 +2,12 @@
 
 <h1>Plants</h1>
 
-<%= link_to "New plant", new_plant_path %>
+<%= link_to "New plant", new_admin_plant_path %>
 
 <div id="plant">
   <% @plants.each do |plant| %>
 
-    <%= link_to plant, class: 'plantCard' do %>
+    <%= link_to [:admin, plant], class: 'plantCard' do %>
       <%= render plant %>
 
       <% end %>

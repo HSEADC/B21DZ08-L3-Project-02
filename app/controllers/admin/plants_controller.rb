@@ -1,4 +1,4 @@
-class PlantsController < ApplicationController
+class Admin::PlantsController < ApplicationController
   load_and_authorize_resource
   before_action :set_plant, only: %i[ show edit update destroy ]
 
@@ -26,7 +26,7 @@ class PlantsController < ApplicationController
 
     respond_to do |format|
       if @plant.save
-        format.html { redirect_to plant_url(@plant), notice: "Plant was successfully created." }
+        format.html { redirect_to admin_plant_url(@plant), notice: "Plant was successfully created." }
         format.json { render :show, status: :created, location: @plant }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class PlantsController < ApplicationController
   def update
     respond_to do |format|
       if @plant.update(plant_params)
-        format.html { redirect_to plant_url(@plant), notice: "Plant was successfully updated." }
+        format.html { redirect_to admin_plant_url(@plant), notice: "Plant was successfully updated." }
         format.json { render :show, status: :ok, location: @plant }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class PlantsController < ApplicationController
     @plant.destroy
 
     respond_to do |format|
-      format.html { redirect_to plants_url, notice: "Plant was successfully destroyed." }
+      format.html { redirect_to admin_plants_url, notice: "Plant was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -66,6 +66,6 @@ class PlantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def plant_params
-      params.require(:plant).permit(:name, :description, :user_id)
+      params.require(:plant).permit(:name, :description, :plant_image).merge(user_id: current_user.id)
     end
 end

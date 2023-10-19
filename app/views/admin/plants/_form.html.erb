@@ -1,4 +1,4 @@
-<%= form_with(model: plant) do |form| %>
+<%= form_with(model:[:admin, plant]) do |form| %>
   <% if plant.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
@@ -12,6 +12,11 @@
   <% end %>
 
   <div>
+    <%= form.label :plant_image, style: "display: block" %>
+    <%= form.file_field :plant_image %>
+  </div>
+
+  <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
@@ -21,10 +26,12 @@
     <%= form.text_area :description %>
   </div>
 
+  <% if false %>
   <div>
     <%= form.label :user_id, style: "display: block" %>
     <%= form.number_field :user_id %>
   </div>
+  <% end %>
 
   <div>
     <%= form.submit %>

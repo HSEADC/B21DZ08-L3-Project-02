@@ -1,5 +1,5 @@
 <div id="<%= dom_id plant %>">
-<%= image_tag plant.plant_image.url, width: 400%>
+<%= image_tag plant.plant_image.url, width: 400 if plant.plant_image.url %>
   <p>
     <strong>Name:</strong>
     <%= plant.name %>
