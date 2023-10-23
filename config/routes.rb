@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :plants do
       resources :comments, except: :show
     end
+    
     resources :comments
     resources :subscriptions
 

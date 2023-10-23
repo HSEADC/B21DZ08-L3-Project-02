@@ -14,6 +14,7 @@ class Admin::CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @plant = Plant.find(params[:plant_id])
     @comment = Comment.new
   end
 
@@ -24,7 +25,7 @@ class Admin::CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @plant = Plant.find(params[:plant_id])
-   @comment = @plant.comments.new(comment_params)
+    @comment = @plant.comments.new(comment_params)
     # @comment = @plant.comments.new(body: params[:comment][:body], user_id: current_user.id)
 
     respond_to do |format|
@@ -37,6 +38,7 @@ class Admin::CommentsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
