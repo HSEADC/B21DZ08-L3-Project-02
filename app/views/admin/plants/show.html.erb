@@ -2,11 +2,15 @@
 
 <%= render @plant %>
 
-<%= link_to "New Comment", new_admin_plant_comment_path(@plant) %>
 
 <h2>Comments</h2>
-
+<%= link_to "New Comment", new_admin_plant_comment_path(@plant) %>
 <%= render @plant.comments %>
+
+
+<h2>Notes</h2>
+<%= link_to "New Note", new_admin_plant_note_path(@plant) %>
+<%= render @plant.notes %>
 
 <div>
   <%= link_to "Edit this plant", edit_admin_plant_path(@plant) %> |

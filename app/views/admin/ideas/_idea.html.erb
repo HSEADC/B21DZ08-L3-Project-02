@@ -1,0 +1,18 @@
+<div id="<%= dom_id idea %>">
+<%= image_tag idea.idea_image.url, width: 400 if idea.idea_image.url %>
+  <p>
+    <strong>Title:</strong>
+    <%= idea.title %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= idea.body %>
+  </p>
+
+  <p>
+    <strong>By</strong>
+    <%= idea.user.email %>
+  </p>
+
+</div>

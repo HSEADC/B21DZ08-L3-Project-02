@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  
   devise_for :users
 
   # resources :plants do
@@ -18,10 +20,13 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :plants do
       resources :comments, except: :show
+      resources :notes, except: :show
     end
     
     resources :comments
     resources :subscriptions
+    resources :ideas
+    resources :notes
 
     root "admin/plants#index"
   end

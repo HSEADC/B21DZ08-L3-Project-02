@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_19_121000) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_29_143743) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "ideas", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "idea_image"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "plant_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "note_image"
+    t.string "date"
   end
 
   create_table "plants", force: :cascade do |t|
