@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :swaps
   
   
   devise_for :users
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
     resources :subscriptions
     resources :ideas
     resources :notes
+    resources :swaps
 
     root "admin/plants#index"
   end

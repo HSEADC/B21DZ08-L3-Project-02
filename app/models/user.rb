@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :notes
   has_many :plants
   has_many :ideas
+  has_many :swaps
 end

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Swaps</h1>
+
+<%= link_to "New swap", new_admin_swap_path %>
+
+<div id="swaps">
+<% @swaps.each do |swap| %>
+
+  <%= link_to [:admin, swap], class: 'plantCard' do %>
+    <%= render swap %>
+  <% end %>
+  <% end %>
+</div>
+
+
