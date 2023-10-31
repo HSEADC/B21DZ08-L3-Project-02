@@ -11,12 +11,9 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.email_field :email, placeholder: "Введите ваш email" %>
-  </div>
-
-  <div >
-    <%= form.submit "отправить"%>
+  <div class="sub">
+    <%= form.email_field :email, placeholder: "Введите ваш email", class:"nesubButton"  %>
+  
+    <%= form.submit "отправить", class:"subButton" %>
   </div>
 <% end %>

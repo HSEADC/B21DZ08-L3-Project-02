@@ -1,4 +1,165 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Welcome#about</h1>
-<p>Find me in app/views/welcome/about.html.erb</p>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body class="About">
+
+<div class="W_BlockAbout">
+    <div class="M_Naming">
+        <div class="A_NameNaming">Plantier</div>
+        <div class="A_DescriptionNaming">мой виртуальный сад</div>
+    </div>
+    <div class="M_About">
+        <div class="A_TitleSecond">Что это?</div>
+        <div class="A_AboutNextDescription">Plantier&nbsp;&mdash; это медиа-сервис для любителей домашнего растениеводства. Наши пользователи могут делиться фотографиями своих цветов,вести о&nbsp;них дневниковые записи, и&nbsp;обмениваться опытом с&nbsp;другими людьми</div>
+    </div>
+</div>
+<%= image_tag "Q_TwoFlowers.png", width: 1000, class: "Q_TwoFlowers" %>
+
+<div class="O_ProblemsSolutions">
+
+    <div class="M_TitlePlashka">
+        <div class="A_Description">Проблемы</div>
+        <div class="A_TitleFirst">CustDev</div>
+    </div>
+
+    <div class="C_CardsProblem">
+        <div class="M_CardProblem">
+            <%= image_tag "Q_Elipse.png", width: 1000, class: "Q_Elipse" %>
+            <div class="A_CardMainText">Растениеводы не&nbsp;всегда находят аудиторию, которая оценит их&nbsp;цветы</div>
+        </div>
+        <div class="M_CardProblem">
+            <%= image_tag "Q_Elipse.png", width: 1000, class: "Q_Elipse" %>
+            <div class="A_CardMainText">Любители растений забывают фиксировать или теряют записи о&nbsp;своих цветах</div>
+        </div>
+        <div class="M_CardProblem">
+            <%= image_tag "Q_Elipse.png", width: 1000, class: "Q_Elipse" %>
+            <div class="A_CardMainText">Растениеводы не&nbsp;могут найти свое комьюнити, которое&nbsp;бы разделяло их&nbsp;запал</div>
+        </div>
+    </div>
+        <div class="M_TextBlock">
+            <div class="A_TitleSecond">Решение</div>
+            <div class="A_MainText">Медиа-сервис для домашних растениеводов, которое позволит формировать комьюнити, делиться своими цветами физически и&nbsp;виртуально</div>
+        </div>
+
+</div>
+
+<%= image_tag "Q_FlowerMiddle.png", width: 1000, class: "Q_FlowerMiddle" %>
+
+<div class="O_Features">
+    <%= image_tag "Q_MobileFeatures.png", width: 1000, class: "Q_MobileFeatures" %>
+
+    <div class="С_Features">
+        <div class="M_FeaturesPlashka">
+            <div class="A_Description">Функции</div>
+            <div class="A_TitleFirst">Особенности</div>
+        </div>
+
+        <div class="W_Features">
+
+            <div class="M_Features">
+                <div class="A_FeaturesText">Возможность фиксировать жизнедеятельность цветка через дневник</div>
+                <%= image_tag "Q_FeatureIcon.png", width: 1000, class: "Q_FeatureIcon" %>
+            </div>
+
+            <div class="M_FeaturesRight">
+                <div class="A_FeaturesText">Теги&nbsp;&mdash; чтобы пользователи находили людей с&nbsp;такими&nbsp;же предпочтениями в&nbsp;растениеводстве, как и&nbsp;у&nbsp;них</div>
+                <%= image_tag "Q_FeatureLTag.png", width: 1000, class: "Q_FeatureLTag" %>
+                <%= image_tag "Q_FeatureRTag.png", width: 1000, class: "Q_FeatureRTag" %>
+            </div>
+
+            <div class="M_Features">
+                <div class="A_FeaturesText">Раздел для обмена, где пользователь может указывать желанные растения и&nbsp;находить тех, кто готов их&nbsp;отдать</div>
+                <%= image_tag "Q_SwapIcon.png", width: 1000, class: "Q_SwapIcon" %>
+            </div>
+
+            <div class="M_FeaturesRight">
+                <div class="A_FeaturesText">Возможность просматривать историю действий другого пользователя и&nbsp;следить за&nbsp;развитием его цветов</div>
+                <%= image_tag "Q_HistoryIcon.png", width: 1000, class: "Q_HistoryIcon" %>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="O_People">
+
+    <div class="M_TitlePeoplePlashka">
+        <div class="A_Description">ЦА</div>
+        <div class="A_TitleFirst">Для кого?</div>
+    </div>
+
+    <div class="W_CardsPeople">
+
+        <div class="M_CardPeople">
+            <%= image_tag "Q_PlantierPerson.png", width: 1000, class: "Q_PlantierPerson" %>
+            <%= image_tag "Q_Elipse.png", width: 1000, class: "Q_Elipse" %>
+            <div class="A_CAName">Садовод</div>
+            <div class="A_CAMainText">может создавать свои уникальные сады</div>
+        </div>
+
+        <div class="M_CardPeople">
+            <%= image_tag "Q_AmateurPerson.png", width: 1000, class: "Q_AmateurPerson" %>
+            <%= image_tag "Q_Elipse.png", width: 1000, class: "Q_Elipse" %>
+            <div class="A_CAName">Любитель</div>
+            <div class="A_CAMainText">найдет вдохновение
+            <br>в садах растениеводов</div>
+        </div>
+    </div>
+
+    <div class="M_TextBlockPeople">
+            <div class="A_TitleSecond">Косвенная</div>
+            <div class="A_MainText">Люди, интересующиеся эстетикой садоводства и&nbsp;желающие посмотреть на&nbsp;растения опытных растениеводов</div>
+    </div>
+
+    <%= image_tag "Q_FlowersBack.png", width: 1000, class: "Q_FlowersBack" %>
+
+</div>
+
+<div class="O_Telegram">
+
+    <div class="W_Telegram">
+        <div class="M_TitlePlashka">
+            <div class="A_Description">Соц-сети</div>
+            <div class="A_TitleFirst">Апдейты</div>
+        </div>
+
+        <div class="M_TextBlockPeople">
+            <div class="A_TitleSecond">Телеграм-канал</div>
+            <div class="A_MainText">Подписывайтесь на&nbsp;наш телеграм-канал, чтобы следить за&nbsp;развитием сервиса и&nbsp;находить единомышленников среди таких&nbsp;же растениеводов, как и&nbsp;вы!</div>
+        </div>
+
+    </div>
+
+    <%= image_tag "Q_TelegramPictures.png", width: 1000, class: "Q_TelegramPictures" %>
+
+</div>
+
+<div class="O_FooterAbout">
+
+    <div class="W_FooterClosure">
+        <div class="A_FooterTitle">Ждем всех цветанутых
+        <br>в нашем крутом медиа-сервисе!
+    </div>
+        <%= image_tag "Q_FooterImg.png", width: 1000, class: "Q_FooterImg" %>
+    </div>
+
+    <div class="W_Authors">
+            <div class= "M_CuratorsAuthors">
+                <div class="A_FooterSupTitle">Авторы</div>
+                <div class="A_FooterNames">Даша Климова<br> Настя Колодина<br> Полина Барыбина</div>
+            </div>
+            <div class= "M_CuratorsAuthors">
+                <div class="A_FooterSupTitle">Кураторы</div>
+                <div class="A_FooterNames">Захар День<br> Вадим Булгаков</div>
+            </div>
+            <div class= "A_FooterSupText">hse adc</div>
+            <div class= "A_FooterSupText">2023</div>
+    </div>
+
+</div>
+
+</body>

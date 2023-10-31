@@ -1,26 +1,31 @@
 <nav class="menubar">
-  <div class="many">
-    <%= link_to "Home", welcome_index_url, class:"dec" %>
-    <% if user_signed_in? && current_user.admin == true %>
-      <%= link_to "Растения", admin_plants_url, class:"dec" %>
-      <%= link_to "Комментарии", admin_comments_url, class:"dec" %>
-      <%= link_to "Заметки", admin_notes_url, class:"dec" %>
-      <%= link_to "Мысли", admin_ideas_url, class:"dec" %>
-      <%= link_to "Обмен", admin_swaps_url, class:"dec" %>
-      <%= link_to "Подписки", admin_subscriptions_url, class:"dec" %>
-    <% end%>
-  </div>
+<a href="https://t.me/myvirtualgarden"><%= image_tag "Q_TelegramImage.svg", width: 1000, class: "Q_TelegramImage" %></a>
 
-  <div>
+  <div class= "W_SectionMenuFirstBlock">
+    <div class="M_SectionMenuFirstBlock">
+      <%= link_to "промо", welcome_index_url %>
+      <%= link_to "о проекте", welcome_about_url %>
+      </div>
+    </div>
+    
+    <% if user_signed_in? && current_user.admin == true %>
+    <%= link_to "Растения", admin_plants_url, class:"dec" %>
+    <%= link_to "Комментарии", admin_comments_url, class:"dec" %>
+    <%= link_to "Заметки", admin_notes_url, class:"dec" %>
+    <%= link_to "Мысли", admin_ideas_url, class:"dec" %>
+    <%= link_to "Обмен", admin_swaps_url, class:"dec" %>
+    <%= link_to "Подписки", admin_subscriptions_url, class:"dec" %>
+    <% end%>
+    
   <% if user_signed_in? %>
       <%#= link_to current_user.email, edit_user_registration_path %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"dec" %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% else %>
       <%#= link_to "Log in", new_user_session_path %>
       <%#= link_to "Register", new_user_registration_path %>
     <% end %>
-
-  </div>
-
+    
+  
+  
 
 </nav>

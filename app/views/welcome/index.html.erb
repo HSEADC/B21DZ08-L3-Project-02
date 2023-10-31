@@ -1,10 +1,106 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
 
-<%= turbo_frame_tag  dom_id(@subscription) do %>
- 
-<%= render 'subscriptions/form', subscription: @subscription %>
+<body>
 
-<% end %>
+
+<div class="O_Naming">
+    <%= image_tag "Q_PromoTitle.svg", width: 1000, class: "Q_PromoTitle" %>
+    <%= image_tag "Q_Arrow.svg", width: 1000, class: "Q_Arrow" %>
+</div>
+
+<div class="O_FirstBlock">
+    <div class="W_FirstBlock">
+        <div class="M_TextBlock">
+            <div class="A_TitleSecond">Что это?</div>
+            <div class="A_MainText">Медиа-сервис
+            <br>для формирования «субкультуры» домашних растениеводов, упорядочивания и развития
+            такого хобби, поиска комьюнити</div>
+        </div>
+
+
+        <div class="C_CardAction">
+            <div class="M_CardAction">
+                <%= image_tag "Q_Action.png", width: 1000, class: "Q_Action" %>
+                <div class="A_CardText">Постите фотографии своих растений</div>
+            </div>
+
+            <div class="M_CardAction">
+                <%= image_tag "Q_ActionNote.png", width: 1000, class: "Q_Action" %>
+                <div class="A_CardText">Ведите записи
+                о цветке в дневнике</div>
+            </div>
+
+            <div class="M_CardAction">
+                <%= image_tag "Q_ActionGarden.png", width: 1000, class: "Q_Action" %>
+                <div class="A_CardText">Смотрите на сады
+                других пользователей</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div> <%= image_tag "Q_FlowerImg.svg", width: 1000, class: "Q_FlowerImg" %></div>
+
+<div class="O_SecondBlock">
+
+    <div class="M_CardPlantExample">
+        <%= image_tag "Q_PlantExample.png", width: 1000, class: "Q_PlantExample" %>
+
+        <div class="W_CardExampleDescription">
+            <div class="A_CardTitle">Типа лук</div>
+            <div class="A_CardText">Но вообще тюльпан</div>
+        </div>
+    </div>
+
+    <%= image_tag "Q_Mobile.png", width: 1000, class: "Q_Mobile" %>
+
+    <div class="M_CardSproutExample">
+        <div class="W_CardExampleTags">
+            <div class="A_ExampleTag">фикус</div>
+            <div class="A_ExampleTag">традесканция</div>
+            <div class="A_ExampleTag">тюльпан</div>
+        </div>
+
+        <div class="W_CardExampleDescription">
+            <div class="A_CardTitle">Поделюсь</div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class="O_Footer">
+    <div class="W_Form">
+        <div class="A_FooterTitle">Не пропустите запуск!</div>
+        <%= turbo_frame_tag  @subscription do %>
+            <%= render 'subscriptions/form', subscription: @subscription %>
+        <% end %>
+    </div>
+
+    <div class="W_Authors">
+            <div class= "M_CuratorsAuthors">
+                <div class="A_FooterSupTitle">Авторы</div>
+                <div class="A_FooterNames">Даша Климова<br> Настя Колодина<br> Полина Барыбина</div>
+            </div>
+            <div class= "M_CuratorsAuthors">
+                <div class="A_FooterSupTitle">Кураторы</div>
+                <div class="A_FooterNames">Захар День<br> Вадим Булгаков</div>
+            </div>
+            <div class= "A_FooterSupText">hse adc</div>
+            <div class= "A_FooterSupText">2023</div>
+    </div>
+
+</div>
+
+</body>
+
+

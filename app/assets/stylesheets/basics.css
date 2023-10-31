@@ -1,5 +1,5 @@
 .plantCard {
-  /* height: 120px; */
+  height: 100%;
   padding: 20px;
   border: 1px solid grey;
   border-radius: 16px;
@@ -10,16 +10,66 @@
   background-color: #f3f3f3;
 }
 
+a {
+  height: 22px;
+  line-height: 90%;
+  text-decoration: none;
+  color: #222222;
+}
+
+a:active {
+  text-decoration: underline;
+  /* color: #222222; */
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #222222;
+}
+
 .menubar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* align-content: center; */
+
   background-color: #e8e8e8;
   border-radius: 12px;
   font-family: '20 Kopeek Book';
   font-size: 26px;
   color: #222222;
-  width: 1900px;
+  /* text-decoration: none; */
+  /* width: 1356px; */
+  width: 100%;
   height: 50px;
-  text-decoration: none;
+  padding: 14px 26px;
+}
+
+.M_SectionMenuFirstBlock {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+}
+
+.W_SectionMenuFirstBlock {
+  align-self: flex-end;
+}
+
+.Q_TelegramImage {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* .input {
+  width: 1000px;
+} */
+
+#subscription_email {
+  width: 620px;
+  height: 71px;
+  border-radius: 14px;
+  border: none;
+  background-color: #f3f3f3;
 }
