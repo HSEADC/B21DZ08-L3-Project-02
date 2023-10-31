@@ -1,15 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Comments</h1>
+<h1>Комментарии</h1>
 
 
 
 
-<div id="comments">
+<div id="comments" class="many">
   <% @comments.each do |comment| %>
-    <%= render comment %>
-    <p>
-      <%= link_to "Show this comment", [:admin, comment] %>
-    </p>
+  
+      <%= link_to [:admin, comment], class:"dec" do%>
+      <%= render comment %>
+    <% end %>
   <% end %>
 </div>

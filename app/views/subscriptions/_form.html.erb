@@ -13,10 +13,10 @@
 
   <div>
     <%= form.label :email, style: "display: block" %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, placeholder: "Введите ваш email" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div >
+    <%= form.submit "отправить"%>
   </div>
 <% end %>

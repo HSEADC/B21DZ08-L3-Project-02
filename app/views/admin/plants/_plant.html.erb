@@ -1,17 +1,18 @@
-<div id="<%= dom_id plant %>">
+<div id="<%= dom_id plant %>" class="cool">
 <%= image_tag plant.plant_image.url, width: 400 if plant.plant_image.url %>
+
   <p>
-    <strong>Name:</strong>
+    <strong>Название:</strong>
     <%= plant.name %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>Описание:</strong>
     <%= plant.description %>
   </p>
 
   <p>
-    <strong>By</strong>
+    <strong>Автор:</strong>
     <%= plant.user.email %>
   </p>
 

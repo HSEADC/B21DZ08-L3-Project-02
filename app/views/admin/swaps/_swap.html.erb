@@ -1,16 +1,16 @@
 <div id="<%= dom_id swap %>">
 <%= image_tag swap.swap_image.url, width: 400 if swap.swap_image.url %>
   <p>
-    <strong>Title:</strong>
+    <strong>Название:</strong>
     <%= swap.title %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>Описание:</strong>
     <%= swap.description %>
   </p>
   <p>
-  <strong>By</strong>
+  <strong>Автор: </strong>
   <%= swap.user.email %>
 </p>
 

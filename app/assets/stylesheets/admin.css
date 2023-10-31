@@ -1,0 +1,78 @@
+.addButton {
+  width: fit-content;
+  display: block;
+  background-color: #dee082;
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 16px;
+  margin: 20px;
+}
+h1 {
+  margin: 20px;
+}
+.comment {
+  width: fit-content;
+  display: block;
+  background-color: #e8e8e8;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 16px;
+  margin: 20px;
+}
+.basic {
+  /* margin: 20px; */
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  height: fit-content;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+.buttons_rel {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.cool {
+  margin: 20px;
+  top: -10px;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+.boom {
+  background-color: black;
+}
+.many {
+  justify-self: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+p {
+  width: 400px;
+  height: fit-content;
+  text-decoration: none;
+  color: black;
+}
+.dec {
+  text-decoration: none;
+  color: black;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  padding: 7px;
+  gap: 24px;
+  padding-right: 20px;
+}

@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Plants</h1>
+<h1>Растения</h1>
 
-<%= link_to "New plant", new_admin_plant_path %>
+<%= link_to "Новое растение", new_admin_plant_path, class: 'addButton' %>
 
-<div id="plant">
+<div id="plant" class="many">
   <% @plants.each do |plant| %>
 
     <%= link_to [:admin, plant], class: 'plantCard' do %>

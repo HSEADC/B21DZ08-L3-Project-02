@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Ideas</h1>
+<h1>Мысли</h1>
 
-<%= link_to "New idea", new_admin_idea_path %>
+<%= link_to "Есть мысль!", new_admin_idea_path, class: 'addButton' %>
 
 <div id="ideas">
   <% @ideas.each do |idea| %>

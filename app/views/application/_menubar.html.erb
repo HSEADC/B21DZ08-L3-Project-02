@@ -1,20 +1,20 @@
 <nav class="menubar">
-  <div>
-    <%= link_to "Home", welcome_index_url %>
+  <div class="many">
+    <%= link_to "Home", welcome_index_url, class:"dec" %>
     <% if user_signed_in? && current_user.admin == true %>
-      <%= link_to "Plants", admin_plants_url %>
-      <%= link_to "Comments", admin_comments_url %>
-      <%= link_to "Notes", admin_notes_url %>
-      <%= link_to "Ideas", admin_ideas_url %>
-      <%= link_to "Swaps", admin_swaps_url %>
-      <%= link_to "Subscriptions", admin_subscriptions_url %>
+      <%= link_to "Растения", admin_plants_url, class:"dec" %>
+      <%= link_to "Комментарии", admin_comments_url, class:"dec" %>
+      <%= link_to "Заметки", admin_notes_url, class:"dec" %>
+      <%= link_to "Мысли", admin_ideas_url, class:"dec" %>
+      <%= link_to "Обмен", admin_swaps_url, class:"dec" %>
+      <%= link_to "Подписки", admin_subscriptions_url, class:"dec" %>
     <% end%>
   </div>
 
   <div>
   <% if user_signed_in? %>
       <%#= link_to current_user.email, edit_user_registration_path %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"dec" %>
     <% else %>
       <%#= link_to "Log in", new_user_session_path %>
       <%#= link_to "Register", new_user_registration_path %>
