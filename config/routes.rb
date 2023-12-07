@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :profiles, only: [:show, :edit, :update]
   # resources :plants do
   #   resources :comments, except: :show
   # end
