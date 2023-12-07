@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :swaps
-  
-  
   devise_for :users
+
+  namespace :api do
+    namespace :v1 do
+      resources :plants, defaults: { format: :json }
+    end
+  end
 
   # resources :plants do
   #   resources :comments, except: :show
