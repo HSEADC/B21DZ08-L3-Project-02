@@ -7,6 +7,8 @@ class Admin::PlantsController < ApplicationController
     @plants = Plant.all
   end
 
+ 
+
   # GET /plants/1 or /plants/1.json
   def show
   end

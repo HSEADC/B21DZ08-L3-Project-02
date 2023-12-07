@@ -15,6 +15,7 @@ def seed
   create_users
   create_plants(50)
   create_comments(2..8)
+  create_comment_replies(1000)
 end
 
 def reset_db
@@ -86,6 +87,15 @@ def create_comments(quantity)
       comment = Comment.create(plant_id: plant.id, body: create_sentence, user_id: user.id)
       puts "Comment with id #{comment.id} for plant with id #{comment.plant.id} just created"
     end
+  end
+end
+
+def create_comment_replies(quantity)
+  quantity.times do
+    user = User.all.sample
+    comment = Comment.all.sample
+    reply = comment.replies.create(plant_id: comment.plant_id, user_id: user.id, body: create_sentence)
+    puts "Comment reply with id #{reply.id} for comment with id #{comment.id} just created"
   end
 end
 

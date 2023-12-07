@@ -5,4 +5,9 @@ class WelcomeController < ApplicationController
 
   def about
   end
+
+  def feed
+    @plants = Plant.all
+    @ideas = Idea.all
+  end
 end

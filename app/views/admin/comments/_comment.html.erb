@@ -1,4 +1,5 @@
 <div id="<%= dom_id comment %>" class="comment">
+  <%= comment.reply_to_comment_id != nil %>
   <p>
     <strong>
     <%= comment.user.email %>
@@ -16,6 +17,11 @@
   </div>
 <% end %>
 
+<div class="commentReplies">
+    <% comment.replies.each do |reply| %>
+      <%= render reply, partial: "admin/comments/comment", comment: reply, plant: plant %>
+    <% end%>
+  </div>
 
 </div>
 

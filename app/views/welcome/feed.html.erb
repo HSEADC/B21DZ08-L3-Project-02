@@ -1,0 +1,31 @@
+
+<h1> Лента </h1>
+
+<div>
+  <% (@ideas + @plants).shuffle.each do |item| %>
+    <%= link_to [:admin, item], class: 'plantCard' do %>
+      <% if item.is_a?(Idea) %>
+        <%= render partial: 'admin/ideas/idea', locals: { idea: item } %>
+      <% elsif item.is_a?(Plant) %>
+        <%= render partial: 'admin/plants/plant', locals: { plant: item } %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+# <div>
+# <% @ideas.each do |idea| %>
+#   <%= link_to [:admin, idea], class: 'plantCard' do %>
+#     <%= render partial: 'admin/ideas/idea', locals: { idea: idea } %>
+#   <% end %>
+# <% end %>
+# </div>
+
+
+# <div>
+# <% @plants.each do |plant| %>
+#   <%= link_to [:admin, plant], class: 'plantCard' do %>
+#     <%= render partial: 'admin/plants/plant', locals: { plant: plant } %>
+#   <% end %>
+# <% end %>
+# </div>

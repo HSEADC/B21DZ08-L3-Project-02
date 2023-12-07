@@ -9,6 +9,7 @@
     </div>
     
     <% if user_signed_in? && current_user.admin == true %>
+    <%= link_to "Лента", welcome_feed_url, class:"dec" %>
     <%= link_to "Растения", admin_plants_url, class:"dec" %>
     <%= link_to "Комментарии", admin_comments_url, class:"dec" %>
     <%= link_to "Заметки", admin_notes_url, class:"dec" %>

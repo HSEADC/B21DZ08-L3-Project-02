@@ -7,6 +7,8 @@ class Admin::IdeasController < ApplicationController
     @ideas = Idea.all
   end
 
+
+
   # GET /ideas/1 or /ideas/1.json
   def show
   end
