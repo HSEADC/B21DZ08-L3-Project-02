@@ -2,6 +2,16 @@
 
 <h1>Растения</h1>
 
+
+<% Plant.tag_counts_on(:tags).each do |tag| %>
+  <div>
+  <%= link_to tagged_admin_plants_path(tag.name) do %>
+      <%= tag.name %> (<%= tag.taggings_count %>)
+    <% end %>
+    </div>
+  <% end %>
+
+
 <%= link_to "Новое растение", new_admin_plant_path, class: 'addButton' %>
 
 <div id="plant" class="many">

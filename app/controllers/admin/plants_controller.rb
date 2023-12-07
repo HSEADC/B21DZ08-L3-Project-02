@@ -7,7 +7,10 @@ class Admin::PlantsController < ApplicationController
     @plants = Plant.all
   end
 
- 
+  def by_tag
+    @plants = Plant.tagged_with(params[:tag])
+    render :index
+  end
 
   # GET /plants/1 or /plants/1.json
   def show
@@ -68,6 +71,6 @@ class Admin::PlantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def plant_params
-      params.require(:plant).permit(:name, :description, :plant_image).merge(user_id: current_user.id)
+      params.require(:plant).permit(:name, :description, :plant_image, :tag_list, :category_list).merge(user_id: current_user.id)
     end
 end

@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     resources :plants do
       resources :comments, except: :show
       resources :notes, except: :show
+
+      get "/by_tag/:tag", to: "plants#by_tag", on: :collection, as: "tagged"
     end
     
     resources :comments
