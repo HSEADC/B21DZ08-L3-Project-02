@@ -11,6 +11,7 @@
 
 def seed
   reset_db
+  clean_content_folders
   create_admin
   create_users
   create_plants(50)
@@ -23,6 +24,10 @@ def reset_db
   Rake::Task['db:create'].invoke
   Rake::Task['db:migrate'].invoke
 end
+
+def clean_content_folders
+  FileUtils.rm_rf('public/uploads')
+end 
 
 def create_admin
   user_data = {

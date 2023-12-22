@@ -53,6 +53,8 @@ gem "devise"
 gem "cancancan"
 gem "rack-cors"
 gem "acts-as-taggable-on", "~> 9.0"
+gem "sass-rails"
+gem "meta-tags"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

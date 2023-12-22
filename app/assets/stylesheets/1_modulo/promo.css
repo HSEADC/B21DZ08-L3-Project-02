@@ -15,28 +15,6 @@ body {
   color: #222222;
 }
 
-@font-face {
-  font-family: '21CentCondensed-UltraLight';
-  src: url('../font/app/assets/fonts/21CentCondensed-UltraLight.ttf')
-      format('ttf'),
-    url('../font/app/assets/fonts/21CentCondensed-UltraLight.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: '20 Kopeek Book';
-  src: url('../fonts/20Kopeek-Book.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: '20 Kopeek Book';
-  src: url('../fonts/20Kopeek-Book.otf') format('otf');
-}
-
-@font-face {
-  font-family: '20 Kopeek Book';
-  src: url('../fonts/20Kopeek-Book.woff') format('woff');
-}
-
 .O_Naming {
   /* width: 1356px; */
   height: 676px;

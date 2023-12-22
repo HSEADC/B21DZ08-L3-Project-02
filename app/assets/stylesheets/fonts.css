@@ -1,0 +1,20 @@
+@font-face {
+  font-family: '21CentCondensed-UltraLight';
+  src: url('21CentCondensed-UltraLight.ttf') format('ttf'),
+    url('21CentCondensed-UltraLight.ttf') format('ttf');
+}
+
+/* @font-face {
+  font-family: '20 Kopeek Book';
+  src: url('20Kopeek-Book.ttf') format('ttf');
+} */
+
+@font-face {
+  font-family: '20 Kopeek Book';
+  src: url('20Kopeek-Book.otf') format('otf');
+}
+
+/* @font-face {
+  font-family: '20 Kopeek Book';
+  src: url('20Kopeek-Book.woff') format('woff');
+} */

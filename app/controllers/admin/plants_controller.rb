@@ -5,6 +5,10 @@ class Admin::PlantsController < ApplicationController
   # GET /plants or /plants.json
   def index
     @plants = Plant.all
+
+    # META
+    @title = "Растения"
+    # 
   end
 
   def by_tag

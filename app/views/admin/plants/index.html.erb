@@ -1,6 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Растения</h1>
+<%
+  set_meta_tags og: {
+    title: "Растения"
+  }
+%>
+<h1><%= title "Растения" %></h1>
 
 
 <% Plant.tag_counts_on(:tags).each do |tag| %>

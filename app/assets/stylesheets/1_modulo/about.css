@@ -2,35 +2,13 @@
   background-color: #e8e8e8;
   overflow-x: hidden;
   color: #222222;
-  .menubar {
-    background-color: #f3f3f3;
-  }
-  .M_TextBlock {
-    align-self: flex-end;
-    background-color: #f3f3f3;
-  }
 }
-
-@font-face {
-  font-family: '21CentCondensed-UltraLight';
-  src: url('../font/app/assets/fonts/21CentCondensed-UltraLight.ttf')
-      format('ttf'),
-    url('../font/app/assets/fonts/21CentCondensed-UltraLight.ttf') format('ttf');
+.menubar {
+  background-color: #f3f3f3;
 }
-
-@font-face {
-  font-family: '20 Kopeek Book';
-  src: url('../fonts/20Kopeek-Book.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: '20 Kopeek Book';
-  src: url('../fonts/20Kopeek-Book.otf') format('otf');
-}
-
-@font-face {
-  font-family: '20 Kopeek Book';
-  src: url('../fonts/20Kopeek-Book.woff') format('woff');
+.M_TextBlock {
+  align-self: flex-end;
+  background-color: #f3f3f3;
 }
 
 .W_BlockAbout {
