@@ -10,4 +10,12 @@ class WelcomeController < ApplicationController
     @plants = Plant.all
     @ideas = Idea.all
   end
+
+  def exchange
+    @swaps = Swap.all
+  end
+
+  def profile
+    @profile = current_user.profile
+  end
 end

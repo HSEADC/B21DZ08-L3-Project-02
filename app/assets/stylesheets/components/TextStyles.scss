@@ -18,12 +18,23 @@
   font-family: 'Atyp Text Regular', sans-serif;
   font-weight: 300;
   font-size: 24px;
+  line-height: 1.2;
 }
 
 .A_MediumText {
   font-family: 'Atyp Text Medium', sans-serif;
   font-size: 24px;
   white-space: pre-line;
+}
+
+.A_AverageRegularText {
+  font-family: 'Atyp Text Regular', sans-serif;
+  font-size: 20px;
+}
+
+.A_AverageMediumText {
+  font-family: 'Atyp Text Medium', sans-serif;
+  font-size: 20px;
 }
 
 .A_SmallRegularText {

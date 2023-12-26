@@ -1,0 +1,53 @@
+.M_Exchage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px 0px 0px 0px;
+
+  .M_ExchageSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 34px;
+    width: 50.94vw;
+    background-color: var(--input-grey);
+    border-radius: 30px;
+    padding: 15px 30px;
+
+    .Q_Search {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .M_ExchangeLocation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+}
+.M_ExchageSwapCards {
+  padding: 40px 0px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.04vw;
+  row-gap: 30px;
+
+  .M_SwapCard {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-decoration: none;
+    color: var(--our-black);
+
+    .A_CardNamePadding {
+      padding: 0px 0px 0px 24px;
+    }
+    .M_SwapCardImg {
+      width: 22.29vw;
+      height: 56vh;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.W_PlantProfileContent {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 0px 16px 0px;
+
+  .W_PlantProfileInfo {
+    width: 30.99vw;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

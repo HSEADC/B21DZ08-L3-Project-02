@@ -21,7 +21,8 @@
   <% @plants.each do |plant| %>
 
     <%= link_to [:admin, plant], class: 'plantCard' do %>
-      <%= render plant %>
+      <%= render partial: 'admin/plants/plantPreview', locals: { plant: plant } %>
+
 
       <% end %>
   <% end %>
