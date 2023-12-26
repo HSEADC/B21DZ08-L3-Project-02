@@ -4,17 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  /* width: 1356px; */
-  /* margin: 20px auto; */
-  padding: 0% 8%;
-  /* padding: 0px 42px; */
-  overflow-x: hidden;
-  /* margin: 0 auto; */
-  background-color: #f3f3f3;
-  color: #222222;
-}
-
 .O_Naming {
   /* width: 1356px; */
   height: 676px;
@@ -225,18 +214,17 @@ body {
   border: 1px #222222 solid;
 }
 
-.O_Footer {
+/* .O_Footer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* width: 1356px; */
   height: 510px;
   background-color: #ffd76f;
   border-radius: 14px;
   margin-top: 180px;
   padding: 24px 46px;
-}
+} */
 
 .W_Form {
   display: flex;
@@ -249,19 +237,6 @@ body {
 .A_FooterTitle {
   font-family: '21CentCondensed-UltraLight', serif;
   font-size: 82px;
-}
-
-.W_Authors {
-  display: flex;
-  height: 158px;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.M_CuratorsAuthors {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .A_FooterSupTitle {

@@ -29,9 +29,30 @@ class PlantImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-   version :thumb do
-     process resize_to_fit: [50, 50]
-   end
+  version :compressed do
+    resize_to_fit(928, nil)
+  end
+
+  version :large, :from_version => :compressed do
+    # process :crop_large
+    resize_to_fit(700, nil)
+  end
+
+  # version :poster, :from_version => :compressed do
+  #   process :crop_poster
+  # end
+
+  version :teaser, :from_version => :large do
+    resize_to_fit(640, 356)
+  end
+
+  version :thumb, :from_version => :large do
+    resize_to_fit(288, 160)
+  end
+
+  version :link, :from_version => :large do
+    resize_to_fit(63, 35)
+  end
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:

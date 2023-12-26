@@ -1,10 +1,23 @@
-<h1>Editing plant</h1>
+<div class="S_BodyPadding">
+<div>
+  <div class="A_ReturnButton">
+    <%= image_tag "base/circle_arrow.svg", width: 1000, class: "Q_CircleArrow" %>
+    <%= link_to "к растению", [:admin, @plant] %>
+  </div>
+  <div class="A_ReturnButton">
+    <%= image_tag "base/circle_arrow.svg", width: 1000, class: "Q_CircleArrow" %>
+    <%= link_to "к растениям", admin_plants_path %>
+    </div>
+</div>
 
-<%= render "form", plant: @plant %>
+<div class="M_TitleWrapper">
+  <div class="A_Title">Редактирование растения</div>
+</div>
+
 
 <br>
-
-<div>
-  <%= link_to "Show this plant", [:admin, @plant] %> |
-  <%= link_to "Back to plants", admin_plants_path %>
+<%= render "form", plant: @plant %>
 </div>
+
+
+

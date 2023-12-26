@@ -1,0 +1,13 @@
+:root {
+  --white: #fafafa;
+  --our-black: #303030;
+  --menu-grey: #e5e5e5;
+  --menu-hrey-hover: #d0d0d0;
+  --input-grey: #efefef;
+  --return-button: #ffefd3;
+  --light-beige: #fcf5ea;
+  --footer-background: linear-gradient(
+    rgba(250, 250, 250, 1),
+    rgba(251, 244, 233, 1) 12%
+  );
+}

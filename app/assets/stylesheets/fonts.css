@@ -14,6 +14,25 @@
   src: url('20Kopeek-Book.otf') format('otf');
 }
 
+@font-face {
+  font-family: 'Panama';
+  src: url('panama.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Atyp Display';
+  src: url('AtypDisplay-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Atyp Text Regular';
+  src: url('AtypText-Regular.ttf') format('ttf'),
+    url('AtypText-Regular.woff') format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Atyp Text Medium';
+  src: url('AtypText-Medium.ttf') format('ttf'),
+    url('AtypText-Medium.woff') format('woff');
+}
 /* @font-face {
   font-family: '20 Kopeek Book';
   src: url('20Kopeek-Book.woff') format('woff');

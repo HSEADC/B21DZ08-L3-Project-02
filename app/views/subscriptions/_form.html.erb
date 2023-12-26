@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
-  <div class="sub">
-    <%= form.email_field :email, placeholder: "Введите ваш email", class:"nesubButton"  %>
+  <div>
+    <%= form.email_field :email, placeholder: "Введите ваш email", class:"A_FooterSubFormInput A_RegularText"  %>
   
-    <%= form.submit "отправить", class:"subButton" %>
+    <%= form.button type: "submit", class: "A_FooterSubFormButton" do %>
+      <%= image_tag "base/sub_arrow.svg", alt: "Submit" %>
+    <% end %>
   </div>
 <% end %>

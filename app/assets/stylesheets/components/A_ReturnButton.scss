@@ -1,0 +1,23 @@
+.A_ReturnButton {
+  background-color: var(--return-button);
+  display: inline-flex;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  width: fit-content;
+  gap: 6px;
+
+  a {
+    font-family: 'Atyp Text Regular', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--our-black);
+  }
+
+  .Q_CircleArrow {
+    width: 22px;
+    height: 22px;
+  }
+}

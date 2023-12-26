@@ -1,0 +1,79 @@
+.O_Footer {
+  padding: 160px 0px 0px 0px;
+
+  .W_FooterBack {
+    padding: 46px 0px 0px 0px;
+    background: var(--footer-background);
+
+    .W_FooterContent {
+      padding: 0% 3.85%;
+
+      .M_FooterSubForm {
+        padding: 50px 0px 0px 0px;
+        border-bottom: 3px solid var(--our-black);
+        width: 45.78vw;
+
+        .A_FooterSubFormInput {
+          background: none;
+          outline: none;
+          border: none;
+          background-color: none;
+          padding: 12px 520px 12px 24px;
+        }
+        .A_FooterSubFormButton {
+          background: none;
+          outline: none;
+          border: none;
+
+          &:hover {
+            opacity: 50%;
+          }
+        }
+      }
+
+      .C_FooterInfo {
+        display: flex;
+        flex-direction: row;
+        padding: 100px 0px 0px 0px;
+        justify-content: space-between;
+
+        .M_FooterSectionFirst {
+          display: flex;
+          flex-direction: row;
+          gap: 240px;
+
+          .M_FooterCuratorsAuthors {
+            display: flex;
+            flex-direction: column;
+            gap: 34px;
+
+            .M_FooterNames {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            }
+          }
+        }
+        .M_FooterSectionSecond {
+          display: flex;
+          flex-direction: row;
+          gap: 60px;
+
+          .Q_Telegram {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .M_FooterDecor {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+
+      .Q_FooterDecorPic {
+      }
+    }
+  }
+}

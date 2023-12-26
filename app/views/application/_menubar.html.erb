@@ -1,34 +1,24 @@
-<nav class="menubar">
-<a href="https://t.me/myvirtualgarden"><%= image_tag "Q_TelegramImage.svg", width: 1000, class: "Q_TelegramImage" %></a>
+<div class="S_BodyPadding">
+<div class="menubar">
+<a href=""><%= image_tag "base/logo.svg", width: 1000, class: "Q_Logo" %></a>
 
   <div class= "W_SectionMenuFirstBlock">
     <div class="M_SectionMenuFirstBlock">
-      <%= link_to "промо", root_url %>
-      <%= link_to "о проекте", welcome_about_url %>
+      <div class="A_MenuSection"><%= link_to "фид", welcome_feed_url, class:"dec" %></div>
+      <div class="A_MenuSection"><%= link_to "обмен", welcome_feed_url, class:"dec" %></div>
       </div>
     </div>
     
-    <% if user_signed_in? && current_user.admin == true %>
-    <%= link_to "Лента", welcome_feed_url, class:"dec" %>
-    <%= link_to "Растения", admin_plants_url, class:"dec" %>
-    <%= link_to "Комментарии", admin_comments_url, class:"dec" %>
-    <%= link_to "Заметки", admin_notes_url, class:"dec" %>
-    <%= link_to "Мысли", admin_ideas_url, class:"dec" %>
-    <%= link_to "Обмен", admin_swaps_url, class:"dec" %>
-    <%= link_to "Подписки", admin_subscriptions_url, class:"dec" %>
-    <% end%>
+   
     
   <% if user_signed_in? %>
       <%#= link_to current_user.email, edit_user_registration_path %>
 
-      <%= link_to "Profile", profile_path(current_user.profile) %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <div class="A_MenuSection"><%= link_to "профиль", profile_path(current_user.profile) %></div>
+      <div class="A_MenuSection"><%= link_to "выйти", destroy_user_session_path, method: :delete %></div>
     <% else %>
-      <%#= link_to "Log in", new_user_session_path %>
-      <%#= link_to "Register", new_user_registration_path %>
+      <%#= link_to "войти", new_user_session_path %>
+      <%#= link_to "зарегестрироваться", new_user_registration_path %>
     <% end %>
-    
-  
-  
-
-</nav>
+</div>
+</div>

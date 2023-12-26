@@ -1,0 +1,52 @@
+
+<div class="O_Footer">
+  <div class="W_FooterBack">
+    <div class="W_FooterContent ">
+
+      <div class="A_Title">подпишись на новости plantier-а</div>
+
+      <div class="M_FooterSubForm">
+          <%= turbo_frame_tag  @subscription do %>
+          <%= render 'subscriptions/form', subscription: @subscription %>
+        <% end %>
+      </div>
+      
+      <div class="C_FooterInfo">
+          <div class="M_FooterSectionFirst">
+            <div class= "M_FooterCuratorsAuthors">
+                <div class="A_MediumText">Авторы</div>
+                <div class="M_FooterNames A_RegularText">
+                  <div>Даша Климова</div>
+                  <div>Настя Колодина</div>
+                  <div>Полина Барыбина</div>
+                </div>
+            </div>
+            <div class= "M_FooterCuratorsAuthors">
+                <div class="A_MediumText">Кураторы</div>
+                <div class="M_FooterNames A_RegularText">
+                  <div>Захар День</div>
+                  <div>Вадим Булгаков</div>
+                </div>
+            </div>
+          </div>
+
+          <div class="M_FooterSectionSecond">
+            <a href="https://t.me/myvirtualgarden"><%= image_tag "base/Q_TelegramImage.svg", width: 1000, class: "Q_Telegram" %></a>
+            <div class="A_MediumText">hse adc 2023</div>
+            <%= image_tag "base/mini_logo.svg", class: "Q_FooterLogo" %>
+          </div>
+      </div>
+  </div>
+
+  <div class="M_FooterDecor">
+    <%= image_tag "base/footer_pics/pic_1.png", class: "Q_FooterDecorPic" %>
+    <%= image_tag "base/footer_pics/pic_2.png", class: "Q_FooterDecorPic" %>
+    <%= image_tag "base/footer_pics/pic_3.png", class: "Q_FooterDecorPic" %>
+    <%= image_tag "base/footer_pics/pic_4.png", class: "Q_FooterDecorPic" %>
+    <%= image_tag "base/footer_pics/pic_5.png", class: "Q_FooterDecorPic" %>
+    <%= image_tag "base/footer_pics/pic_6.png", class: "Q_FooterDecorPic" %>
+    <%= image_tag "base/footer_pics/pic_7.png", class: "Q_FooterDecorPic" %>
+  </div>
+
+</div>
+

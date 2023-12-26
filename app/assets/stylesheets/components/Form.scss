@@ -1,0 +1,49 @@
+.O_Form {
+  display: flex;
+  flex-direction: column;
+  gap: 5.94vw;
+  padding: 30px 0px 0px 0px;
+
+  .M_FormSection {
+    display: flex;
+    flex-direction: row;
+
+    .M_FormSectionName {
+      width: 25.1%;
+    }
+    .M_FormSectionContent {
+      padding: 12px 0px 0px 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 4.63vh;
+
+      .A_FormInput {
+        width: 35.47vw;
+        border: none;
+        background-color: var(--input-grey);
+        border-radius: 14px;
+        border: 1px solid #ccc;
+        padding: 20px 26px 20px 26px;
+
+        &:focus {
+          outline: 1px solid #303030;
+        }
+      }
+    }
+  }
+}
+.M_FormImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--input-grey);
+  border-radius: 14px;
+  width: 14.79vw;
+  height: 22.96vh;
+
+  .Q_FormInputDecor {
+    width: 7.29vw;
+    height: 12.41vh;
+  }
+}

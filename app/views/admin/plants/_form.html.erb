@@ -11,40 +11,100 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :plant_image, style: "display: block" %>
-    <%= form.file_field :plant_image %>
-  </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+<div class="O_Form">
+    <div class="M_FormSection">
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="M_FormSectionName A_SecondTitle">
+          Основное
+      </div>
 
-  <% if false %>
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
-  </div>
-  <% end %>
+      <div class="M_FormSectionContent">
+          <div>
+            <%= form.label "Название растения", class: "A_MediumText", style: "display: block" %>
+            <br>
+            <%= form.text_field :name, class: "A_FormInput A_RegularText", placeholder: "Кактус антон" %>
+          </div>
 
-  <div>
-  <%= form.label :tag_list, style: "display: block" %>
-  <%= form.text_field :tag_list, value: plant.tag_list .join(', ') %>
+          <div>
+            <%= form.label "Добавьте тег с названием растения", class: "A_MediumText", style: "display: block" %>
+            <div class="A_SmallRegularText A_DescripMargin">Он поможет другим пользователям найти ваше растение</div>
+            <br>
+            <%= form.text_field :tag_list, value: plant.tag_list .join(', ') %>
+          </div>
+          
+
+          <% if false %>
+          <div>
+            <%= form.label :user_id, style: "display: block" %>
+            <%= form.number_field :user_id %>
+          </div>
+          <% end %>
+      </div>
+    </div>
+
+    <div class="M_FormSection">
+    
+      <div class="M_FormSectionName A_SecondTitle">
+          Внешний вид
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div>
+          <%= form.label "Фотографии", class: "A_MediumText", style: "display: block" %>
+          <div class="A_SmallRegularText A_DescripMargin">Не более 4</div>
+          <br>
+          <div  class="M_FormImage">
+            <%= image_tag "base/img_input_decor.svg", width: 1000, class: "Q_FormInputDecor" %>
+            <br>
+            <%= form.label "Загрузить изображение", class: "A_SmallRegularText", style: "display: block" %>
+            <%= form.file_field :plant_image %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="M_FormSection">
+    
+      <div class="M_FormSectionName A_SecondTitle">
+          Подробности
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div>
+          <%= form.label "Описание растения", 
+          class: "A_MediumText",  style: "display: block" %>
+          <div class="A_SmallRegularText A_DescripMargin">Например, как оно у вас оказалось и в чём его особенности</div>
+
+          <br>
+          <%= form.text_area :description, class: "A_FormInput A_RegularText", placeholder: "Кактус антон" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="M_FormSection">
+    
+      <div class="M_FormSectionName A_SecondTitle">
+          Расположение
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div class="M_FormShelf">
+          <%= form.label "Выберете полку", class: "A_MediumText", style: "display: block" %>
+          <br>
+          <%= form.text_field :category_list, class: "A_FormInput A_RegularText", value: plant.category_list .join(', ') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="M_FormSection">
+    
+      <div class="M_FormSectionName">
+      </div>
+
+      <div>
+        <%= form.submit "Сохранить", class:"A_SubmitButton A_MediumText"%>
+      </div>
+      <% end %>
+    </div>
 </div>
-
-<div>
-  <%= form.label :category_list, style: "display: block" %>
-  <%= form.text_field :category_list, value: plant.category_list .join(', ') %>
-</div>
-
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
