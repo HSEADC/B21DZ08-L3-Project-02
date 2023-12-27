@@ -25,10 +25,11 @@ class Admin::IdeasController < ApplicationController
   # POST /ideas or /ideas.json
   def create
     @idea = Idea.new(idea_params)
+    @profile = current_user.profile
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to admin_idea_url(@idea), notice: "Idea was successfully created." }
+        format.html { redirect_to profile_url(@profile), notice: "Idea was successfully created." }
         format.json { render :show, status: :created, location: @idea }
       else
         format.html { render :new, status: :unprocessable_entity }

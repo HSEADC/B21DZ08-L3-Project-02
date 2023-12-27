@@ -51,3 +51,17 @@
     }
   }
 }
+.A_NewPlantButton {
+  background-color: var(--plant-button);
+  display: inline-flex;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--our-black);
+
+  &:hover {
+    background-color: var(--return-button);
+  }
+}

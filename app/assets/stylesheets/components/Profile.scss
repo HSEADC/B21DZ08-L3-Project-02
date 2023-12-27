@@ -1,17 +1,151 @@
+.M_ProfileTitle {
+  display: flex;
+  flex-direction: row;
+
+  .Q_Edit {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .M_ProfileMyIdea {
   width: 14.79vw;
   height: 15vh;
   overflow: hidden;
   border-radius: 14px;
-  .A_ProfileMyIdeaCover {
-    width: 14.79vw;
-    height: 15vh;
-    object-fit: cover;
+  position: relative;
 
-    filter: blur(5px);
+  .Q_ProfileMyIdeaSave {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 14px;
+    z-index: 1;
   }
 
   .A_ProfileMyIdea {
-    margin-top: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 14px;
+    z-index: 1;
+    color: var(--white);
+  }
+  .A_ProfileMyIdeaCover {
+    position: relative;
+    width: 14.79vw;
+    height: 15vh;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(0.8);
+  }
+}
+.C_ProfileTags {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.M_ProfileInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 0px 30px 0px;
+
+  .M_ProfileInfoBasic {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .A_ProfileInfoBasicAbout {
+      width: 18vw;
+    }
+  }
+
+  .M_ProfileInfoLocation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .C_ProfileInfoNumbers {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+
+    .M_ProfileInfoNumbersBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: var(--input-grey);
+      border-radius: 14px;
+      width: 9.58vw;
+      height: 13.89vh;
+    }
+  }
+}
+.C_ProfileCards {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.04vw;
+  row-gap: 30px;
+}
+.M_ProfilePlantsBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  .C_ProfilePlantShelfFilter {
+    display: flex;
+    flex-direction: row;
+
+    .A_ProfilePlantsFilterElement {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 60px 0px 60px;
+    }
+    .Border {
+      border-bottom: 2px solid var(--our-black);
+    }
+  }
+}
+.C_ProfileCardsIdeas {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.04vw;
+  row-gap: 30px;
+  padding: 0px 0px 30px 0px;
+
+  .M_ProfileIdeasPlus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9.38vw;
+    height: 15vh;
+    border-radius: 14px;
+    background-color: var(--input-grey);
+
+    &:hover {
+      background-color: var(--input-grey-hover);
+    }
+  }
+}
+.M_ProfileIdeasBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 72.4vw;
+  padding: 0px 0px 20px 0px;
+
+  .A_ProfileIdeasBlockMore {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    align-items: center;
+    gap: 12px;
   }
 }

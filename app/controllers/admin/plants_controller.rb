@@ -31,10 +31,11 @@ class Admin::PlantsController < ApplicationController
   # POST /plants or /plants.json
   def create
     @plant = Plant.new(plant_params)
+    @profile = current_user.profile
 
     respond_to do |format|
       if @plant.save
-        format.html { redirect_to admin_plant_url(@plant), notice: "Plant was successfully created." }
+        format.html { redirect_to profile_url(@profile), notice: "Plant was successfully created." }
         format.json { render :show, status: :created, location: @plant }
       else
         format.html { render :new, status: :unprocessable_entity }

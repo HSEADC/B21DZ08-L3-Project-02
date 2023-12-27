@@ -1,40 +1,83 @@
 <div class="S_BodyPadding">
   <div class="M_TitleWrapper">
-    <div class="A_Title"><%= @profile.username %></div>
-    <%= link_to "Edit", edit_profile_path(@profile) %>
+    <div class="M_ProfileTitle">
+      <div class="A_Title"><%= @profile.username %></div>
+      <%= link_to edit_profile_path(@profile) do %>
+        <%= image_tag "base/settings.svg", class: "Q_Edit" %>
+      <% end %>
+    </div>
   </div>
 
-  <div>
-    <div>
-      <div class="A_AverageMediumText">
+  <div class="M_ProfileInfo">
+    <div class="M_ProfileInfoBasic">
+      <div class="M_ProfileInfoLocation A_AverageMediumText">
+        <%= image_tag "base/location.svg", class: "Q_Edit" %>
         <%= @profile.location %>
       </div>
-      <div class="Tags A_AverageRegularText">
-        <div class="A_Tag">Каланхое</div>
-        <div class="A_Tag">Фикус Бенджамина</div>
+      <div class="C_ProfileTags A_AverageRegularText">
+        <div class="A_Tag">кактусовод</div>
+        <div class="A_Tag">бонсай-мастер</div>
       </div>
-      <div class="A_AverageRegularText">
+      <div class="A_ProfileInfoBasicAbout A_AverageRegularText">
         <%= @profile.about %>
       </div>
     </div>
 
-    <div></div>
+    <div class="C_ProfileInfoNumbers">
+      <div class="M_ProfileInfoNumbersBlock">
+        <div class="A_SecondTitle">19</div> 
+        <div class="A_AverageRegularText">Подписчики</div>
+      </div>
+      <div class="M_ProfileInfoNumbersBlock">
+        <div class="A_SecondTitle">22</div> 
+        <div class="A_AverageRegularText">Подписки</div>
+      </div>
+      <div class="M_ProfileInfoNumbersBlock">
+        <div class="A_SecondTitle">5</div> 
+        <div class="A_AverageRegularText">Растения</div>
+      </div>
+    </div>
 </div>
 
-
-  <div class="A_SecondTitle">Мысли</div>
-  <div class="M_ExchageSwapCards">
-  <% @ideas.each do |idea| %>
-    <% if current_user && idea.user_id == current_user.id %>
-      <%= link_to [:admin, idea], class: 'M_SwapCard' do %>
-        <%= render partial: 'admin/ideas/ideaPreviewProfile', locals: { idea: idea } %>
+  <div class="M_ProfileIdeasBlock">
+    <div class="A_SecondTitle">Мысли</div>
+    <% if current_user.ideas.count >= 4 %>
+    <div class="A_ProfileIdeasBlockMore">
+      <div class="A_AverageRegularText">посмотреть все</div>
+      <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %>
+    </div>
+    <% end %>
+  </div>
+  <div class="C_ProfileCardsIdeas">
+    <div class="M_ProfileIdeasPlus">
+    <%= link_to new_admin_idea_path do %>
+      <%= image_tag "base/profile_ideas_plus.svg", class: "Q_Edit" %>
+      <% end %>
+    </div>
+    <% idea_counter = 0 %>
+    <% @ideas.reverse.each do |idea| %>
+      <% if current_user && idea.user_id == current_user.id %>
+        <% if idea_counter < 4 %>
+          <%= link_to [:admin, idea], class: 'M_SwapCard' do %>
+            <%= render partial: 'admin/ideas/ideaPreviewProfile', locals: { idea: idea } %>
+          <% end %>
+          <% idea_counter += 1 %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
   </div>
 
-  <div class="M_ExchageSwapCards">
-    <% @plants.each do |plant| %>
+  <div class="M_ProfilePlantsBlock">
+    <div class="C_ProfilePlantShelfFilter">
+        <div class="A_ProfilePlantsFilterElement Border A_RegularText">Сад</div>
+        <div class="A_ProfilePlantsFilterElement A_RegularText">Полки</div>
+    </div>
+    <div>
+      <%= link_to "Добавить растение", new_admin_plant_path, class: 'A_NewPlantButton A_RegularText' %>
+    </div>
+  </div>
+    <div class="C_ProfileCards">
+    <% @plants.reverse.each do |plant| %>
       <% if current_user && plant.user_id == current_user.id %>
         <%= link_to [:admin, plant], class: 'M_SwapCard' do %>
           <%= render partial: 'admin/plants/plantPreview', locals: { plant: plant } %>

@@ -32,22 +32,21 @@
   flex-wrap: wrap;
   column-gap: 1.04vw;
   row-gap: 30px;
+}
+.M_SwapCard {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  text-decoration: none;
+  color: var(--our-black);
 
-  .M_SwapCard {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    text-decoration: none;
-    color: var(--our-black);
-
-    .A_CardNamePadding {
-      padding: 0px 0px 0px 24px;
-    }
-    .M_SwapCardImg {
-      width: 22.29vw;
-      height: 56vh;
-      border-radius: 20px;
-      object-fit: cover;
-    }
+  .A_CardNamePadding {
+    padding: 0px 0px 0px 24px;
+  }
+  .M_SwapCardImg {
+    width: 22.29vw;
+    height: 56vh;
+    border-radius: 20px;
+    object-fit: cover;
   }
 }
