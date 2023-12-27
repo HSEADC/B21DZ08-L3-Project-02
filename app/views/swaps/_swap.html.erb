@@ -11,9 +11,7 @@
         <div class="A_RegularText"><%= swap.description %></div>
       </div>
       <div class="W_PlantProfilePic">
-      <%= link_to [:admin, swap] do %>
         <%= image_tag swap.swap_image.url, width: 400 if swap.swap_image.url %>
-      <% end %>
       </div>
   </div>
 </div>

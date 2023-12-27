@@ -7,7 +7,23 @@
   color: #222222;
   padding: 30px 0px 16px 0px;
 }
-
+.W_MenuSections {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.W_SectionMenuLogo {
+  display: flex;
+  align-items: center;
+  background-color: var(--menu-grey);
+  height: 54px;
+  border-radius: 30px;
+  padding: 8px 20px 4px 4px;
+  &:hover {
+    background-color: var(--menu-hrey-hover);
+  }
+}
 .M_SectionMenuFirstBlock {
   width: 280px;
   display: flex;
@@ -45,7 +61,7 @@
   cursor: pointer;
 }
 .Q_Logo {
-  width: 198px;
-  height: 52px;
+  width: 176px;
+  height: 44px;
   cursor: pointer;
 }

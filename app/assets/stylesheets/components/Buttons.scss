@@ -27,3 +27,27 @@
     height: 22px;
   }
 }
+.A_NewButton {
+  padding: 30px 0px 0px 0px;
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--our-black);
+
+    &:hover {
+      opacity: 80%;
+    }
+
+    .A_RegularText {
+      padding: 6px 0px 0px 0px;
+    }
+
+    .Q_Plus {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}

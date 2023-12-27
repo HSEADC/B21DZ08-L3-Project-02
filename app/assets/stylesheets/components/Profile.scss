@@ -1,0 +1,17 @@
+.M_ProfileMyIdea {
+  width: 14.79vw;
+  height: 15vh;
+  overflow: hidden;
+  border-radius: 14px;
+  .A_ProfileMyIdeaCover {
+    width: 14.79vw;
+    height: 15vh;
+    object-fit: cover;
+
+    filter: blur(5px);
+  }
+
+  .A_ProfileMyIdea {
+    margin-top: 40px;
+  }
+}

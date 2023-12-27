@@ -1,0 +1,12 @@
+<div class="M_ProfileMyIdea">
+<div class="A_ProfileMyIdea A_AverageRegularText">
+    <%= idea.title %>
+  </div>
+  <% if idea.idea_image.present? %>
+    <%= image_tag idea.idea_image.url, class: "A_ProfileMyIdeaCover "%>
+    <% else %>
+    <div></div>
+  <% end %>
+  
+
+</div>

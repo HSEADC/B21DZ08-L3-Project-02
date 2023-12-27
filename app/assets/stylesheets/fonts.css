@@ -20,7 +20,9 @@
 }
 @font-face {
   font-family: 'Atyp Display';
-  src: url('AtypDisplay-Regular.ttf') format('ttf');
+  src: url('AtypDisplay-Regular.ttf') format('ttf'),
+    url('AtypDisplay-Regular.woff') format('woff');
+  font-weight: 300;
 }
 @font-face {
   font-family: 'Atyp Text Regular';

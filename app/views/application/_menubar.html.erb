@@ -1,24 +1,29 @@
 <div class="S_BodyPadding">
   <div class="menubar">
-  <a href=""><%= image_tag "base/logo.svg", width: 1000, class: "Q_Logo" %></a>
-
+  <div class="W_SectionMenuLogo">
+    <a href=""><%= image_tag "base/logo.svg", class: "Q_Logo" %></a>
+  </div>
+  <div class="W_MenuSections">
     <div class= "W_SectionMenuFirstBlock">
-      <div class="M_SectionMenuFirstBlock">
+      
         <div class="A_MenuSection"><%= link_to "фид", welcome_feed_url, class:"dec" %></div>
         <div class="A_MenuSection"><%= link_to "обмен", welcome_exchange_url, class:"dec" %></div>
-        </div>
+        
       </div>
       
     
-      
-    <% if user_signed_in? %>
-        <%#= link_to current_user.email, edit_user_registration_path %>
-
-        <div class="A_MenuSection"><%= link_to "профиль", welcome_profile_url %></div>
-        <div class="A_MenuSection"><%= link_to "выйти", destroy_user_session_path, method: :delete %></div>
-      <% else %>
-        <%#= link_to "войти", new_user_session_path %>
-        <%#= link_to "зарегестрироваться", new_user_registration_path %>
-      <% end %>
+      <div class= "W_SectionMenuFirstBlock">
+        <% if user_signed_in? %>
+            <%#= link_to current_user.email, edit_user_registration_path %>
+            <div class="A_MenuSection"><%= link_to "мои предложения", welcome_myswaps_url %></div>
+            <div class="A_MenuSection"><%= link_to "вишлист", welcome_wishlist_url %></div>
+            <div class="A_MenuSection"><%= link_to "профиль", profile_path(current_user.profile) %></div>
+            <div class="A_MenuSection"><%= link_to "выйти", destroy_user_session_path, method: :delete %></div>
+          <% else %>
+            <%#= link_to "войти", new_user_session_path %>
+            <%#= link_to "зарегестрироваться", new_user_registration_path %>
+          <% end %>
+      </div>
+  </div>
   </div>
 </div>

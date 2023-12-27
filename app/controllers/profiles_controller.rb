@@ -2,6 +2,8 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[ show edit update destroy ]
 
   def show
+    @plants = Plant.all
+    @ideas = Idea.all
   end
 
   def edit
@@ -27,6 +29,6 @@ class ProfilesController < ApplicationController
 
     # # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:username, :about, :location)
+      params.require(:profile).permit(:username, :about, :location, :user_id)
     end
 end

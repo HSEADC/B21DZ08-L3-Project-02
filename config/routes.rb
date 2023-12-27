@@ -13,12 +13,15 @@ Rails.application.routes.draw do
   # end
 
   resources :subscriptions, only: [:create, :show]
-
+  resources :swaps
+  get 'welcome/main'
   get 'welcome/index'
   get 'welcome/about'
   get 'welcome/feed'
   get 'welcome/exchange'
   get 'welcome/profile'
+  get 'welcome/wishlist'
+  get 'welcome/myswaps'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

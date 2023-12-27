@@ -4,10 +4,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-      if user && user.admin == true
+      # if user && user.admin == true
       can :manage, :all
       
-  end
+  # end
 
       # if user
       #   can :manage, Plant, user_id: user.id

@@ -13,7 +13,7 @@ def seed
   reset_db
   clean_content_folders
   create_admin
-  create_users
+  create_users_with_profiles
   create_plants(50)
   create_comments(2..8)
   create_comment_replies(1000)
@@ -40,31 +40,56 @@ def create_admin
 
 end
 
-def create_users
-  i = 0
+# def create_users
+#   i = 0
 
-  10.times do
+#   10.times do
+#     user_data = {
+#       email: "user_#{i}@email.com",
+#       password: 'testtest'
+#     }
+
+#     # if i == 0
+#     #    user_data[:email] = "admin@email.com"
+#     #    user_data[:admin] = true
+#     #  end
+
+#     user = User.create!(user_data)
+#     puts "User created with id #{user.id}"
+
+#     i += 1
+#   end
+# end
+
+
+def create_users_with_profiles
+  10.times do |i|
+    # User creation
     user_data = {
-      email: "user_#{i}@email.com",
+      email: "user_#{i + 1}@email.com",
       password: 'testtest'
     }
 
-    # if i == 0
-    #    user_data[:email] = "admin@email.com"
-    #    user_data[:admin] = true
-    #  end
-
     user = User.create!(user_data)
-    puts "User created with id #{user.id}"
 
-    i += 1
+    # Profile creation with the same ID as the user
+    profile_data = {
+      user_id: user.id,
+      username: "username_#{i + 1}",
+      about: "Sample about for user #{i + 1}",
+      location: "Sample location for user #{i + 1}"
+    }
+
+    profile = Profile.create!(profile_data)
+
+    puts "User created with id #{user.id} and profile created with id #{profile.id} and profile number #{profile.id}"
   end
 end
 
 def create_sentence
   sentence_words = []
 
-  (10..20).to_a.sample.times do
+  (1..3).to_a.sample.times do
     sentence_words << @words.sample
   end
 

@@ -5,12 +5,7 @@
 <%= link_to "Создать карточку обмена", new_admin_swap_path, class: 'addButton' %>
 
 <div id="swaps">
-<% @swaps.each do |swap| %>
 
-  <%= link_to [:admin, swap], class: 'plantCard' do %>
-    <%= render swap %>
-  <% end %>
-  <% end %>
 </div>
 
 

@@ -1,0 +1,19 @@
+<div class="M_MySwapCardInfo">
+  <div class="A_AverageMediumText ">
+    <%= swap.title %>
+  </div>
+
+  <div class="M_MySwapCardButtons">
+    <%= image_tag "base/edit.svg", class: "Q_Plus" %>
+    <%= image_tag "base/bin.svg", class: "Q_Plus" %>
+  </div>
+</div>
+
+<div class="M_MySwapCardImg">
+  <% if swap.swap_image.present? %>
+  
+    <%= image_tag swap.swap_image.url, class: "A_MySwapCardImg" %>
+  <% else %>
+    <div></div>
+  <% end %>
+</div>

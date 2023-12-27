@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  before_action :authenticate_user!, only: :profile
+  
   def index
     @subscription = Subscription.new
   end
@@ -15,7 +17,7 @@ class WelcomeController < ApplicationController
     @swaps = Swap.all
   end
 
-  def profile
-    @profile = current_user.profile
+  def myswaps
+    @swaps = Swap.all
   end
 end

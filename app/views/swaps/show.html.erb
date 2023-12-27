@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @swap %>
+
+<div>
+  <%= link_to "Edit this swap", edit_swap_path(@swap) %> |
+  <%= link_to "Back to swaps", swaps_path %>
+
+  <%= button_to "Destroy this swap", @swap, method: :delete %>
+</div>
