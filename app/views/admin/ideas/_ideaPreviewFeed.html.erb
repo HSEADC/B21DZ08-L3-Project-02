@@ -1,0 +1,9 @@
+
+<div class="M_IdeaCardImg">
+    <% if idea.idea_image.present? %>
+      <%= image_tag idea.idea_image.url, class: "A_IdeaCardImg"%>
+      <% else %>
+      <div></div>
+    <% end %>
+</div>
+<div></div>

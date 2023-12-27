@@ -1,7 +1,9 @@
 <div class="S_BodyPadding">
   <div class="menubar">
   <div class="W_SectionMenuLogo">
-    <a href=""><%= image_tag "base/logo.svg", class: "Q_Logo" %></a>
+  <%= link_to welcome_main_url do %>
+    <%= image_tag "base/logo.svg", class: "Q_Logo" %>
+  <% end %>
   </div>
   <div class="W_MenuSections">
     <div class= "W_SectionMenuFirstBlock">

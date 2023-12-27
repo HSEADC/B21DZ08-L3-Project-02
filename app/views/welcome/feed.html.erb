@@ -1,20 +1,13 @@
-
-<h1> Лента </h1>
-
-
-<div>
-<% @ideas.each do |idea| %>
-  <%= link_to [:admin, idea], class: 'plantCard' do %>
-    <%= render partial: 'admin/ideas/idea', locals: { idea: idea } %>
-  <% end %>
-<% end %>
-</div>
-
-
-<div>
-<% @plants.each do |plant| %>
-  <%= link_to [:admin, plant], class: 'plantCard' do %>
-    <%= render partial: 'admin/plants/plantPreview', locals: { plant: plant } %>
-  <% end %>
-<% end %>
+<div class="S_BodyPadding">
+  <div class="C_FeedIdeaCards">
+    <% idea_counter = 0 %> 
+    <% @ideas.each do |idea| %>
+      <% if idea_counter < 2 %>
+        <%= link_to [:admin, idea], class: 'M_IdeaCard' do %>
+          <%= render partial: 'admin/ideas/ideaPreviewFeed', locals: { idea: idea } %>
+        <% end %>
+        <% idea_counter += 1 %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

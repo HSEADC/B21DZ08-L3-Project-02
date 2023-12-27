@@ -1,7 +1,35 @@
+.A_ProfileAvatar {
+  width: 4.4vw;
+  height: 4.4vw;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -1vh;
+
+  .A_ProfileAvatarImg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .M_ProfileTitle {
   display: flex;
   flex-direction: row;
 
+  .W_ProfileTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+  .Q_Icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(45deg);
+    }
+  }
   .Q_Edit {
     width: 24px;
     height: 24px;
@@ -50,7 +78,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 0px 30px 0px;
+  padding: 12px 0px 30px 0px;
 
   .M_ProfileInfoBasic {
     display: flex;

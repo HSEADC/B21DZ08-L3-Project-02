@@ -1,0 +1,21 @@
+.C_FeedIdeaCards {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  .M_IdeaCard {
+    display: flex;
+    flex-direction: row;
+    width: 45.78vw;
+    height: 32.59vh;
+    border-radius: 14px;
+    background-color: var(--input-grey);
+    padding: 14px;
+
+    .A_IdeaCardImg {
+      width: 28.8vw;
+      height: 30vh;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+  }
+}

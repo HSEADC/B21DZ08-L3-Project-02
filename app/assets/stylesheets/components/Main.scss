@@ -1,0 +1,60 @@
+.M_MainFlowerWall {
+  position: absolute;
+  top: -4vh;
+  z-index: 0;
+}
+.position {
+  margin-top: 141.3vh;
+  position: relative;
+}
+.M_MainLogoDesc {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -3vh;
+  width: 100vw;
+  height: 100vh;
+
+  .M_MainLogoDescCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.C_MainGradient {
+  position: absolute;
+  .M_MainFirstGradientBack {
+    width: 100vw;
+    height: 120vh;
+    margin-top: -5vh;
+    background: var(--main-background);
+  }
+}
+.M_MainFlowerSuggest {
+  .A_MainFlowerSuggestMore {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    padding: 20px 0px 20px 0px;
+
+    a {
+      text-decoration: none;
+      color: var(--our-black);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+  .C_MainFlowerSuggest {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.04vw;
+    row-gap: 30px;
+    justify-content: flex-end;
+    padding: 0px 0px 200px 0px;
+  }
+}

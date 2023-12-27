@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div>
+<div class="C_MainGradient">
+  <div class="M_MainFirstGradientBack"></div>
+  
+</div>
+  <div class="M_MainFlowerWall">
+    <%= image_tag "base/main.png", class: "Q_FlowerWall" %>
+  </div>
+  <div class="M_MainLogoDesc">
+    <div class="M_MainLogoDescCenter">
+      <%= image_tag "base/big_logo.svg", class: "Q_BigLogo" %>
+      <div class="A_SecondTitle">
+        Медиа-сервис домашнего растениеводства
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="S_BodyPadding position">
+  <div class="A_Title ">
+  ИЗУЧАЙТЕ ДОМАШНИЕ САДЫ ДРУГИХ<br> ПОЛЬЗОВАТЕЛЕЙ И ПУБЛИКУЙТЕ СВОИ<br> РАСТЕНИЯ
+  </div>
+
+  <div class="M_MainFlowerSuggest">
+    <div class="A_MainFlowerSuggestMore">
+      <%= link_to welcome_feed_path do %>
+        <div class="A_AverageRegularText">смотреть больше</div>
+        <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %>
+      <% end %>
+    </div>
+
+    <div class="C_MainFlowerSuggest">
+    <% idea_counter = 0 %>
+    <% @plants.each do |plant| %>
+        <% if idea_counter < 3 %>
+          <%= link_to [:admin, plant], class: 'M_SwapCard' do %>
+            <%= render partial: 'admin/plants/plantPreview', locals: { plant: plant } %>
+          <% end %>
+          <% idea_counter += 1 %>
+        <% end %>
+      <% end %>
+    
+    </div>
+  </div>
+
+  <div class="A_Title ">
+  ЧИТАЙТЕ ПУБЛИКАЦИИ<br> РАСТЕНИЕВОДОВ
+  </div>
+  <div></div>
+</div>

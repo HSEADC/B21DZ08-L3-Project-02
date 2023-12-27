@@ -20,4 +20,8 @@ class WelcomeController < ApplicationController
   def myswaps
     @swaps = Swap.all
   end
+
+  def main
+    @plants = Plant.all
+  end
 end

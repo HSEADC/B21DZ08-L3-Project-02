@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+  <div>
+  <%= form.label :profile_image, style: "display: block" %>
+  <%= form.file_field :profile_image %>
+</div>
 
   <div>
     <%= form.label :username, style: "display: block" %>
