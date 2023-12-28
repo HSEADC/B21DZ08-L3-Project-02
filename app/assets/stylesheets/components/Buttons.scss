@@ -52,16 +52,31 @@
   }
 }
 .A_NewPlantButton {
-  background-color: var(--plant-button);
   display: inline-flex;
   padding: 15px 30px;
   justify-content: center;
   align-items: center;
   border-radius: 14px;
   text-decoration: none;
+}
+.orange {
   color: var(--our-black);
+  background-color: var(--plant-button);
 
   &:hover {
     background-color: var(--return-button);
   }
+}
+.grey {
+  color: var(--white);
+  background-color: var(--button-grey);
+
+  &:hover {
+    background-color: var(--button-grey-hover);
+  }
+}
+.custom-button {
+  border: none;
+  background: none;
+  padding: 0;
 }

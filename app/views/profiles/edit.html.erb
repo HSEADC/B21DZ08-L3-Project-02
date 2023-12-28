@@ -10,27 +10,108 @@
       </ul>
     </div>
   <% end %>
-  <div>
-  <%= form.label :profile_image, style: "display: block" %>
-  <%= form.file_field :profile_image %>
+
+<div class="S_BodyPadding">
+  <div class="M_TitleWrapper">
+    <div class="A_Title">
+      редактировать профиль
+    </div>
+  </div>
+  <div class="O_Form">
+
+    <div class="M_FormSection">
+      <div class="M_FormSectionName A_SecondTitle">
+          Основное
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div>
+          <%= form.label "Придумайте никнейм", class: "A_MediumText", style: "display: block" %>
+          <br>
+          <%= form.text_field :username, class: "A_FormInput A_RegularText", placeholder: "flower_person"  %>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="M_FormSection">
+      <div class="M_FormSectionName A_SecondTitle">
+            Аватарка
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div>
+        <%= form.label :profile_image, "Фотография", class: "A_MediumText",  style: "display: block" %>
+        <br>  
+        <div  class="M_FormImage">
+            <%= image_tag "base/img_input_decor.svg", width: 1000, class: "Q_FormInputDecor" %>
+            <br>
+            <%= form.label "Загрузить изображение", class: "A_SmallRegularText", style: "display: block" %>
+            <%= form.file_field :profile_image %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+      
+    <div class="M_FormSection">
+
+      <div class="M_FormSectionName A_SecondTitle">
+            Подробности
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div>
+        <%= form.label "Описание профиля", 
+        class: "A_MediumText", style: "display: block" %>
+        <div class="A_SmallRegularText A_DescripMargin">
+          Расскажите немного о себе 
+        </div>
+   
+        <br>
+        <%= form.text_area :about, class: "A_FormInput A_RegularText", placeholder: "Кактус антон"  %>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="M_FormSection">
+
+      <div class="M_FormSectionName A_SecondTitle">
+            Расположение
+      </div>
+
+      <div class="M_FormSectionContent">
+          <div>
+          <%= form.label "Город", 
+          class: "A_MediumText", style: "display: block" %>
+          <div class="A_SmallRegularText A_DescripMargin">
+            Из какого вы города? Это информация даст вам возможность<br> учавствовать в обмене растениями
+          </div>
+     
+          <br>
+          <%= form.text_area :location, class: "A_FormInput A_RegularText", placeholder: "Кактус антон"  %>
+          </div>
+      </div>
+    </div>
+
+    <div class="M_FormSection">
+    
+      <div class="M_FormSectionName">
+      </div>
+      <div>
+      <%= form.submit "Сохранить", class: "A_SubmitButton A_MediumText" %>
+    </div>
+    <% end %>
+    </div>
+
+
+
+
+
+  </div>
 </div>
-
-  <div>
-    <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
-  </div>
-
-  <div>
-    <%= form.label :about, style: "display: block" %>
-    <%= form.text_area :about %>
-  </div>
-
-  <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_area :location %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>

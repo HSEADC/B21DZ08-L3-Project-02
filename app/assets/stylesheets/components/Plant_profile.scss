@@ -104,3 +104,51 @@
     border-radius: 14px;
   }
 }
+.C_PlantProfileNotes {
+  padding: 0% 0% 0% 3.85%;
+
+  .M_PlantProfileNotesInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3.85%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+  .M_PlantProfileNotes {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    padding-top: 30px;
+    .M_PlantProfileNote {
+      background-color: var(--input-grey);
+      width: fit-content;
+      padding: 28px;
+      border-radius: 14px;
+
+      .W_PlantProfileNoteImg {
+        width: 17.19vw;
+        height: 17.19vw;
+        border-radius: 14px;
+        overflow: hidden;
+
+        .A_PlantProfileNoteImg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+.W_PlantProfileTitle {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.none {
+  width: 0%;
+  height: 0%;
+}

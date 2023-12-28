@@ -1,17 +1,2 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @plant %>
 
-
-
-
-<h2>Notes</h2>
-<%= link_to "New Note", new_admin_plant_note_path(@plant) %>
-<%= render @plant.notes %>
-
-<div>
-  <%= link_to "Edit this plant", edit_admin_plant_path(@plant) %> |
-  <%= link_to "Back to plant", admin_plants_path %>
-
-  <%= button_to "Destroy this plant", [:admin, @plant], method: :delete %>
-</div>

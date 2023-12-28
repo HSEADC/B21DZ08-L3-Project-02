@@ -10,24 +10,80 @@
       </ul>
     </div>
   <% end %>
-<div class="cool">
-  <div>
-    <%= form.label :Картинка, style: "display: block" %>
-    <%= form.file_field :idea_image %>
+
+  <div class="O_Form">
+    <div class="M_FormSection">
+
+      <div class="M_FormSectionName A_SecondTitle">
+        Основное
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div>
+          <%= form.label "Название мысли", class: "A_MediumText", style: "display: block" %>
+          <br>
+          <%= form.text_field :title, class: "A_FormInput A_RegularText", placeholder: "Как пересаживать кактус"  %>
+        </div>
+      </div>
+    </div>
+
+    <div class="M_FormSection">
+    
+      <div class="M_FormSectionName A_SecondTitle">
+          Внешний вид
+      </div>
+
+      <div class="M_FormSectionContent">
+        <div>
+          
+          <%= form.label "Фотографии", class: "A_MediumText", style: "display: block" %>
+          <div class="A_SmallRegularText A_DescripMargin">Не более 4</div>
+          <br>
+          <div  class="M_FormImage">
+            <%= image_tag "base/img_input_decor.svg", width: 1000, class: "Q_FormInputDecor" %>
+            <br>
+            <%= form.label "Загрузить изображение", class: "A_SmallRegularText", style: "display: block" %>
+            <%= form.file_field :idea_image %>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="M_FormSection">
+    
+        <div class="M_FormSectionName A_SecondTitle">
+            Тело мысли
+        </div>
+
+        <div class="M_FormSectionContent">
+          <div>
+            <%= form.label "Основной текст мысли", 
+            class: "A_MediumText", style: "display: block" %>
+            <div class="A_SmallRegularText A_DescripMargin">Поделитесь своими находками в сфере растениеводства </div>
+
+            <br>
+            <%= form.text_area :body, class: "A_FormInput A_RegularText", placeholder: "Я узнал лучший способ для пересаживания кактусов..."  %>
+          </div>
+        </div>
+    </div>
+
+      <div class="M_FormSection">
+      
+        <div class="M_FormSectionName">
+        </div>
+            <div>
+              <%= form.submit "Сохранить", class:"A_SubmitButton A_MediumText" %>
+            </div>
+            <% end %>
+
+      </div>
+
   </div>
 
-  <div>
-    <%= form.label :Название, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+    
 
-  <div>
-    <%= form.label :Текст, style: "display: block" %>
-    <%= form.text_area :body %>
-  </div>
 
-  <div>
-    <%= form.submit %>
+
   </div>
-  </div>
-<% end %>

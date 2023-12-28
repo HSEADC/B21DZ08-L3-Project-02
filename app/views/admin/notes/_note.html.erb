@@ -1,19 +1,26 @@
-<div id="<%= dom_id note %>">
-<%= image_tag note.note_image.url, width: 400 if note.note_image.url %>
+<div id="<%= dom_id note %>" class="M_PlantProfileNote">
 
-<p>
 
-<%= note.date %>
-</p>
+  <div class="A_SmallRegularText">
+  <%= note.date %>
+  </div>
 
-<p>
-    <strong>Название:</strong>
-    <%= note.title %>
-  </p>
+  <div class="A_AverageMediumText">
+      <%= note.title %>
+  </div>
 
-  <p>
-    <strong>Что произошло:</strong>
+  <div class="A_AverageRegularText">
     <%= note.body %>
-  </p>
+  </div>
+
+  
+  <% if note.note_image.present? %>
+  <div class="W_PlantProfileNoteImg">
+    <%= image_tag note.note_image.url, class: "A_PlantProfileNoteImg" %>
+    </div>
+  <% else %>
+    <div class="none"></div>
+  <% end %>
+  
 
 </div>

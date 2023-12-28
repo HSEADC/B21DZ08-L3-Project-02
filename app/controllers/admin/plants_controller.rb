@@ -17,6 +17,7 @@ class Admin::PlantsController < ApplicationController
 
   # GET /plants/1 or /plants/1.json
   def show
+    @user = @plant.user
   end
 
   # GET /plants/new

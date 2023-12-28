@@ -2,9 +2,3 @@
 
 <%= render @swap %>
 
-<div>
-  <%= link_to "Edit this swap", edit_admin_swap_path(@swap) %> |
-  <%= link_to "Back to swaps", admin_swaps_path %>
-
-  <%= button_to "Destroy this swap", [:admin, @swap], method: :delete %>
-</div>

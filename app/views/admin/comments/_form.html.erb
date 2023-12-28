@@ -10,13 +10,28 @@
       </ul>
     </div>
   <% end %>
+<div class="O_Form">
+  <div class="M_FormSection">
+    <div class="M_FormSectionName A_SecondTitle">
+          Тело комментария
+    </div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
+    <div class="M_FormSectionContent">
+      <div>
+        <%= form.text_area :body, class: "A_FormInput A_RegularText", placeholder: "Доброе!"  %>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="M_FormSection">
+    
+      <div class="M_FormSectionName">
+      </div>
+
+      <div>
+        <%= form.submit "Сохранить", class:"A_SubmitButton A_MediumText" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  
+</div>

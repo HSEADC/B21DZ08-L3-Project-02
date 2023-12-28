@@ -9,6 +9,7 @@ class Admin::SwapsController < ApplicationController
 
   # GET /swaps/1 or /swaps/1.json
   def show
+    @user = User.find(@swap.user_id)
   end
 
   # GET /swaps/new

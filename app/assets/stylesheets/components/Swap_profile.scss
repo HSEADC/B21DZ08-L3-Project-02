@@ -1,0 +1,29 @@
+.M_SwapFirstBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.M_SwapContact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  .A_SwapContact {
+    cursor: pointer;
+    &:hover {
+      opacity: 70%;
+    }
+  }
+}
+.W_SwapProfileTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .M_SwapProfileTitle {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+}

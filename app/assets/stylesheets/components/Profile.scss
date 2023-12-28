@@ -1,3 +1,13 @@
+.Q_Icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(45deg);
+  }
+}
+
 .A_ProfileAvatar {
   width: 4.4vw;
   height: 4.4vw;
@@ -21,15 +31,7 @@
     align-items: center;
     gap: 12px;
   }
-  .Q_Icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
 
-    &:hover {
-      transform: rotate(45deg);
-    }
-  }
   .Q_Edit {
     width: 24px;
     height: 24px;
