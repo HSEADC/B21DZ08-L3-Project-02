@@ -1,9 +1,35 @@
 
 <div class="M_IdeaCardImg">
-    <% if idea.idea_image.present? %>
-      <%= image_tag idea.idea_image.url, class: "A_IdeaCardImg"%>
-      <% else %>
-      <div></div>
-    <% end %>
+  <% if idea.idea_image.present? %>
+    <%= image_tag idea.idea_image.url, class: "A_IdeaCardImg" %>
+  <% else %>
+    <%= image_tag "", class: "A_IdeaCardImg" %>
+  <% end %>
 </div>
-<div></div>
+
+<div class="M_IdeaCardInfo">
+  <div class="M_IdeaCardInfoFirst">
+    <div class="M_IdeaCardInfoFirstSub">
+        <div class="M_IdeaCardInfoAvatar">
+        <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg" %>
+        </div>
+        <div class="M_IdeaCardInfoNickname A_AverageRegularText">
+          <%= @profile&.username || "Unknown" %>
+        </div>
+    </div>
+    <div class="M_IdeaCardInfoSave">
+      <%= image_tag "base/save.svg", class: "Q_Save" %>
+    </div>
+  </div>
+
+  <div class="M_IdeaCardInfoSecond">
+    <div class="M_IdeaCardInfoDescTime">
+      <div class="A_MediumText"><%= idea.title %></div>
+    </div>
+
+    <div class="M_IdeaCardInfoLink">
+        <div class="A_AverageRegularText">перейти к мысли</div>
+        <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %> 
+    </div>
+  </div>
+</div>

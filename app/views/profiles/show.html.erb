@@ -2,13 +2,11 @@
   <div class="M_TitleWrapper">
     <div class="M_ProfileTitle">
     <div class="W_ProfileTitle">
-      <div class="A_ProfileAvatar">
-        <% if @profile.profile_image.present? %>
-            <%= image_tag @profile.profile_image, class: "A_ProfileAvatarImg" %>
-        <% else %>
-            <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg" %>
-        <% end %>
-      </div>
+    <div class="A_ProfileAvatar">
+    
+        <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg" %>
+   
+  </div>
       <div class="A_Title"><%= @profile.username %></div>
     </div>
       <%= link_to edit_profile_path(@profile) do %>

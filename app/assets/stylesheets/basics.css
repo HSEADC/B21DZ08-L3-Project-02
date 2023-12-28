@@ -3,6 +3,7 @@ body {
   overflow-x: hidden;
   background-color: var(--white);
   color: var(--our-black);
+  text-decoration: none;
 }
 .S_BodyPadding {
   padding: 0% 3.85%;

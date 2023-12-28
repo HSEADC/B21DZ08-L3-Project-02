@@ -1,13 +1,65 @@
 <div class="S_BodyPadding">
-  <div class="C_FeedIdeaCards">
-    <% idea_counter = 0 %> 
-    <% @ideas.each do |idea| %>
-      <% if idea_counter < 2 %>
-        <%= link_to [:admin, idea], class: 'M_IdeaCard' do %>
-          <%= render partial: 'admin/ideas/ideaPreviewFeed', locals: { idea: idea } %>
-        <% end %>
-        <% idea_counter += 1 %>
-      <% end %>
-    <% end %>
+
+  <div class="W_FeedBlock">
+    <div class="A_FeedSecondTitle A_SecondTitle">Новые растения</div>
+
+    <div class="C_ProfileCards">
+      <% idea_counter = 0 %> 
+        <% @plants.reverse.each do |plant| %>
+          <% if idea_counter < 4 %>
+            <%= link_to [:admin, plant], class: 'M_SwapCard' do %>
+              <%= render partial: 'admin/plants/plantPreview', locals: { plant: plant } %>
+            <% end %>
+            <% idea_counter += 1 %>
+          <% end %>
+          <% end %>
+      </div>
   </div>
+
+  <div class="W_FeedBlock">
+    <div class="A_FeedSecondTitle A_SecondTitle">Самые свежие мысли</div>
+
+    <div class="C_FeedIdeaCards">
+      <% idea_counter = 0 %> 
+      <% @ideas.each do |idea| %>
+        <% if idea_counter < 2 %>
+          <%= link_to [:admin, idea], class: 'M_IdeaCard' do %>
+            <%= render partial: 'admin/ideas/ideaPreviewFeed', locals: { idea: idea } %>
+          <% end %>
+          <% idea_counter += 1 %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="W_FeedBlock">
+    <div class="C_ProfileCards">
+    <% idea_counter = 0 %> 
+      <% @plants.reverse.each do |plant| %>
+        <% if idea_counter < 8 %>
+          <%= link_to [:admin, plant], class: 'M_SwapCard' do %>
+            <%= render partial: 'admin/plants/plantPreview', locals: { plant: plant } %>
+          <% end %>
+          <% idea_counter += 1 %>
+        <% end %>
+        <% end %>
+    </div>
+  </div>
+
+
+  <div class="W_FeedBlock">
+      <div class="C_FeedIdeaCards">
+      <% idea_counter = 0 %> 
+      <% @ideas.each do |idea| %>
+        <% if idea_counter < 2 %>
+          <%= link_to [:admin, idea], class: 'M_IdeaCard' do %>
+            <%= render partial: 'admin/ideas/ideaPreviewFeed', locals: { idea: idea } %>
+          <% end %>
+          <% idea_counter += 1 %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
 </div>

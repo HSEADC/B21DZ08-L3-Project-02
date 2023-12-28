@@ -1,10 +1,26 @@
+.W_FeedBlock {
+  padding: 100px 0px 0px 0px;
+
+  .A_FeedSecondTitle {
+    padding: 0px 0px 30px 0px;
+  }
+}
+
 .C_FeedIdeaCards {
   display: flex;
   flex-direction: row;
   gap: 14px;
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
   .M_IdeaCard {
     display: flex;
     flex-direction: row;
+    gap: 28px;
     width: 45.78vw;
     height: 32.59vh;
     border-radius: 14px;
@@ -16,6 +32,63 @@
       height: 30vh;
       object-fit: cover;
       border-radius: 14px;
+    }
+    .M_IdeaCardInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 14.01vw;
+
+      .M_IdeaCardInfoFirst {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .M_IdeaCardInfoFirstSub {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          align-items: center;
+          .M_IdeaCardInfoAvatar {
+            width: 2.19vw;
+            height: 2.19vw;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+          .M_IdeaCardInfoNickname {
+            text-decoration: none;
+            color: var(--our-black);
+          }
+          .Q_Edit {
+            width: 20px;
+            height: 24px;
+          }
+        }
+      }
+      .M_IdeaCardInfoSecond {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24.07vh;
+        text-decoration: none;
+        .M_IdeaCardInfoDescTime {
+          padding: 20px 0px 0px 0px;
+          text-decoration: none;
+          color: var(--our-black);
+        }
+        .M_IdeaCardInfoLink {
+          color: var(--our-black);
+          display: flex;
+          flex-direction: row;
+          text-decoration: none;
+          gap: 12px;
+
+          &:hover {
+            opacity: 70%;
+          }
+        }
+      }
     }
   }
 }

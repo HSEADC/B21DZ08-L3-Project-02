@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   def show
     @plants = Plant.all
     @ideas = Idea.all
+    @profile = Profile.find(params[:id])
   end
 
   def edit

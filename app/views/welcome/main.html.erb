@@ -50,5 +50,22 @@
   <div class="A_Title ">
   ЧИТАЙТЕ ПУБЛИКАЦИИ<br> РАСТЕНИЕВОДОВ
   </div>
-  <div></div>
+  <div class="uppadding A_FeedSecondTitle A_SecondTitle">Самые свежие мысли</div>
+  
+  <div class="padding">
+  <div class="C_FeedIdeaCards">
+      <% idea_counter = 0 %> 
+      <% @ideas.each do |idea| %>
+        <% if idea_counter < 2 %>
+          <%= link_to [:admin, idea], class: 'M_IdeaCard' do %>
+            <%= render partial: 'admin/ideas/ideaPreviewFeed', locals: { idea: idea } %>
+          <% end %>
+          <% idea_counter += 1 %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  </div>
 </div>
