@@ -1,19 +1,18 @@
-<div id="<%= dom_id comment %>" class="comment">
-  <%= comment.reply_to_comment_id != nil %>
-  <p>
-    <strong>
-    <%= comment.user.email %>
-    </strong>
-  </p>
+<div id="<%= dom_id comment %>" class="W_PlantComment">
   
-  <p>
+  <div class="A_AverageMediumText">
+    <%= comment.user.email %>
+  </div>
+  
+  <div class="A_AverageRegularText">
     <%= comment.body %>
-  </p>
+  </div>
 
   <% if can? :manage, comment %>
-  <div class="buttons_rel">
-    <%= link_to "редактировать", edit_admin_comment_path(comment), class:"basic" %>
-    <%= button_to "удалить", [:admin, comment], method: :delete, class:"basic" %>
+  <div class="C_PlantCommentActions">
+    <div class="A_PlantCommentAction A_SmallRegularText">ответить</div>
+    <%= link_to "редактировать", edit_admin_comment_path(comment), class:"A_PlantCommentAction A_SmallRegularText" %>
+    <%= button_to "удалить", [:admin, comment], method: :delete, class:"destroy A_PlantCommentAction A_SmallRegularText" %>
   </div>
 <% end %>
 

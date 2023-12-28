@@ -9,4 +9,98 @@
     flex-direction: column;
     gap: 24px;
   }
+
+  .W_PlantProfilePic {
+    width: 30.31vw;
+    height: 35.1vw;
+
+    .A_PlantProfilePic {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .W_PlantProfileInteraction {
+    width: 30.99vw;
+    .A_PlantDate {
+      display: flex;
+      justify-content: end;
+    }
+    .M_PlantComments {
+      display: flex;
+      justify-content: end;
+      .W_PlantCommentsContent {
+        width: 25.05vw;
+
+        .M_CommentMore {
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          gap: 14px;
+          align-items: center;
+          padding-top: 16px;
+        }
+        .M_PlantLikeComment {
+          display: flex;
+          flex-direction: row;
+          gap: 30px;
+          padding-bottom: 14px;
+          padding-top: 50px;
+
+          .M_PlantLikeCommentItem {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+
+            .Q_Like {
+              width: 27px;
+              height: 25px;
+            }
+            .Q_Comment {
+              width: 27px;
+              height: 25px;
+            }
+          }
+        }
+        .W_PlantComment {
+          width: fit-content;
+          display: block;
+          background-color: var(--input-grey);
+          border-radius: 16px;
+          width: 25.05vw;
+          padding: 14px;
+
+          .C_PlantCommentActions {
+            display: flex;
+            flex-direction: row;
+            gap: 14px;
+          }
+
+          .destroy {
+            padding: 0px;
+            border: none;
+            margin-top: -5px;
+          }
+
+          .A_PlantCommentAction {
+            color: var(--button-grey);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+.W_CommentButton {
+  display: flex;
+  justify-content: end;
+  padding-top: 6px;
+
+  .A_CommentButton {
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--button-grey);
+    padding: 16px 22px 16px 22px;
+    border-radius: 14px;
+  }
 }

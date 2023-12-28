@@ -16,10 +16,49 @@
     </div>
 
     <div class="W_PlantProfilePic">
-      <%= image_tag plant.plant_image.url, width: 400 if plant.plant_image.url %>
+      <%= image_tag plant.plant_image.url, class: "A_PlantProfilePic" %>
     </div>
 
-    <div class="W_PlantProfileInteraction"></div>
-  
+    <div class="W_PlantProfileInteraction">
+      <div class="A_PlantDate A_AverageRegularText">
+        Добавлено:
+        <%= plant.created_at.strftime("%Y.%m.%d") %>
+      </div>
+
+      
+
+      <div class="M_PlantComments">
+        <div class="W_PlantCommentsContent">
+          <div class="M_PlantLikeComment">
+            <div class="M_PlantLikeCommentItem">
+              <%= image_tag "base/like.svg", class: "Q_Like" %>
+              <div class="A_AverageRegularText">12</div>
+            </div>
+            <div class="M_PlantLikeCommentItem">
+              <%= image_tag "base/comment.svg", class: "Q_Comment" %>
+              <div class="A_AverageRegularText">34</div>
+            </div>
+        </div>
+
+          <% @plant.comments.each do |comment| %>
+            <% if comment.replies.empty? %>
+              <%= render comment, plant: @plant %>
+            <% end %>
+          <% end %>
+          
+          <div class="M_CommentMore">
+            <div class="A_AverageRegularText">посмотреть больше</div>
+            <%= image_tag "base/more_arrow.svg", class: "Q_Edit" %>
+          </div>
+
+          <div class="W_CommentButton A_SmallRegularText">
+            <%= link_to "Написать комментарий", new_admin_plant_comment_path(@plant), class: "A_CommentButton" %>
+          </div>
+      </div>
+
+          
+        </div>
+      </div>
+    </div>
   </div>
 </div>
