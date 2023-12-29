@@ -8,8 +8,8 @@
   <div class="W_MenuSections">
     <div class= "W_SectionMenuFirstBlock">
       
-        <div class="A_MenuSection"><%= link_to "фид", welcome_feed_url, class:"dec" %></div>
-        <div class="A_MenuSection"><%= link_to "обмен", welcome_exchange_url, class:"dec" %></div>
+        <div class="A_MenuSection thirty"><%= link_to "фид", welcome_feed_url, class:"dec" %></div>
+        <div class="A_MenuSection thirty"><%= link_to "обмен", welcome_exchange_url, class:"dec" %></div>
         
       </div>
       
@@ -17,12 +17,12 @@
       <div class= "W_SectionMenuFirstBlock">
         <% if user_signed_in? %>
             <%#= link_to current_user.email, edit_user_registration_path %>
-            <div class="A_MenuSection"><%= link_to "мои предложения", welcome_myswaps_url %></div>
-            <div class="A_MenuSection"><%= link_to "вишлист", welcome_wishlist_url %></div>
-            <div class="A_MenuSection"><%= link_to "профиль", profile_path(current_user.profile) %></div>
-            <div class="A_MenuSection"><%= link_to "выйти", destroy_user_session_path, method: :delete %></div>
+            <div class="A_MenuSection thirty"><%= link_to "мои предложения", welcome_myswaps_url %></div>
+            <div class="A_MenuSection thirty"><%= link_to "вишлист", welcome_wishlist_url %></div>
+            <div class="A_MenuSection thirty"><%= link_to "профиль", profile_path(current_user.profile) %></div>
+            <div class="A_MenuSectionFour four"><%= link_to "выйти", destroy_user_session_path, method: :delete %></div>
           <% else %>
-            <%#= link_to "войти", new_user_session_path %>
+          <div class="A_MenuSectionFour four"><%= link_to "войти", new_user_session_path %></div>
             <%#= link_to "зарегестрироваться", new_user_registration_path %>
           <% end %>
       </div>

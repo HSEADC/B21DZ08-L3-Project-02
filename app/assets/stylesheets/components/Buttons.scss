@@ -4,6 +4,12 @@
   padding: 20px 84px 20px 84px;
   border-radius: 14px;
 }
+.A_SubmitButtonLog {
+  background-color: var(--our-black);
+  color: var(--white);
+  border-radius: 14px;
+  padding: 10px 44px 10px 44px;
+}
 .A_ReturnButton {
   background-color: var(--return-button);
   display: inline-flex;
@@ -79,4 +85,16 @@
   border: none;
   background: none;
   padding: 0;
+}
+.links {
+  text-decoration: none;
+  color: var(--our-black);
+  &:hover {
+    opacity: 70%;
+  }
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }

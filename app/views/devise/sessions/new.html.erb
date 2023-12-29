@@ -1,26 +1,50 @@
-<h2>Log in</h2>
+<div class="S_BodyPadding">
+<div class="M_TitleWrapper">
+<div class="A_Title">Войти</div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="">
+<br>
+          <br>
+<div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label  "Почта", class: "A_MediumText"%>
+          <br>
+          <br>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "A_FormInput A_RegularText" %>
+        </div>
+</div>
+<br>
+          <br>
+        <div class="field">
+          <%= f.label "Пароль", class: "A_MediumText"%>
+          <br>
+          <br>
+          <%= f.password_field :password, autocomplete: "current-password", class: "A_FormInput A_RegularText"  %>
+        </div>
+        <br>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+        <br>
+        <br>
+        <div class="actions">
+          <%= f.submit "Войти"%>
+        </div>
+      <% end %>
+      <br>
+<div class="flex">
+      <%= render "devise/shared/links" %>
+</div>
+
+
+
+
+
+
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

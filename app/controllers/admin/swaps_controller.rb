@@ -27,7 +27,7 @@ class Admin::SwapsController < ApplicationController
 
     respond_to do |format|
       if @swap.save
-        format.html { redirect_to admin_swaps_url(@swap), notice: "Swap was successfully created." }
+        format.html { redirect_to welcome_myswaps_url(@swap), notice: "Swap was successfully created." }
         format.json { render :show, status: :created, location: @swap }
       else
         format.html { render :new, status: :unprocessable_entity }
