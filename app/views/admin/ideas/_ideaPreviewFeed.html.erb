@@ -11,10 +11,14 @@
   <div class="M_IdeaCardInfoFirst">
     <div class="M_IdeaCardInfoFirstSub">
         <div class="M_IdeaCardInfoAvatar">
-        <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg" %>
+          <% if idea.user.profile.profile_image.file.present? %>
+            <%= image_tag idea.user.profile.profile_image.url, class: "A_ProfileAvatarImg" %>
+          <% else %>
+            <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg", alt: "Default Avatar" %>
+          <% end %>
         </div>
         <div class="M_IdeaCardInfoNickname A_AverageRegularText">
-          <%= @profile&.username || "Unknown" %>
+          <%= idea.user.profile.username %>
         </div>
     </div>
     <div class="M_IdeaCardInfoSave">

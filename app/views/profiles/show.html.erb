@@ -3,9 +3,11 @@
     <div class="M_ProfileTitle">
     <div class="W_ProfileTitle">
     <div class="A_ProfileAvatar">
-    
-        <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg" %>
-   
+        <% if @profile.profile_image.file.present? %>
+         <%= image_tag @profile.profile_image.url, class: "A_ProfileAvatarImg" %>
+        <% else %>
+         <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg", alt: "Default Avatar" %>
+        <% end %>
   </div>
       <div class="A_Title"><%= @profile.username %></div>
     </div>
@@ -40,7 +42,7 @@
         <div class="A_AverageRegularText">Подписки</div>
       </div>
       <div class="M_ProfileInfoNumbersBlock">
-        <div class="A_SecondTitle">5</div> 
+        <div class="A_SecondTitle"><%= current_user.plants.length%></div> 
         <div class="A_AverageRegularText">Растения</div>
       </div>
     </div>

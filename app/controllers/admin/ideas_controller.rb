@@ -11,6 +11,7 @@ class Admin::IdeasController < ApplicationController
 
   # GET /ideas/1 or /ideas/1.json
   def show
+    
   end
 
   # GET /ideas/new

@@ -1,31 +1,45 @@
 <div class="S_BodyPadding">
   <div class="menubar">
-  <div class="W_SectionMenuLogo">
-  <%= link_to welcome_main_url do %>
-    <%= image_tag "base/logo.svg", class: "Q_Logo" %>
-  <% end %>
-  </div>
-  <div class="W_MenuSections">
-    <div class= "W_SectionMenuFirstBlock">
-      
-        <div class="A_MenuSection thirty"><%= link_to "фид", welcome_feed_url, class:"dec" %></div>
-        <div class="A_MenuSection thirty"><%= link_to "обмен", welcome_exchange_url, class:"dec" %></div>
-        
-      </div>
-      
-    
+    <div class="W_SectionMenuLogo">
+    <%= link_to welcome_main_url do %>
+      <%= image_tag "base/logo.svg", class: "Q_Logo" %>
+    <% end %>
+    </div>
+    <div class="W_MenuSections">
       <div class= "W_SectionMenuFirstBlock">
-        <% if user_signed_in? %>
-            <%#= link_to current_user.email, edit_user_registration_path %>
-            <div class="A_MenuSection thirty"><%= link_to "мои предложения", welcome_myswaps_url %></div>
-            <div class="A_MenuSection thirty"><%= link_to "вишлист", welcome_wishlist_url %></div>
-            <div class="A_MenuSection thirty"><%= link_to "профиль", profile_path(current_user.profile) %></div>
-            <div class="A_MenuSectionFour four"><%= link_to "выйти", destroy_user_session_path, method: :delete %></div>
-          <% else %>
-          <div class="A_MenuSectionFour four"><%= link_to "войти", new_user_session_path %></div>
-            <%#= link_to "зарегестрироваться", new_user_registration_path %>
-          <% end %>
-      </div>
-  </div>
+        
+          <div class="A_MenuSection <%= 'active' if current_page?(welcome_feed_path) %>">
+            <%= link_to "фид", welcome_feed_url%>
+          </div>
+          <div class="A_MenuSection <%= 'active' if current_page?(welcome_exchange_path) %>">
+            <%= link_to "обмен", welcome_exchange_url%>
+          </div>
+          
+        </div>
+        
+      
+        <div class= "W_SectionMenuFirstBlock">
+          <% if user_signed_in? %>
+
+
+              <%#= link_to current_user.email, edit_user_registration_path %>
+              <div class="A_MenuSection <%= 'active' if current_page?(welcome_myswaps_path) %>">
+                <%= link_to "мои предложения", welcome_myswaps_url %>
+              </div>
+              <div class="A_MenuSection <%= 'active' if current_page?(welcome_wishlist_path) %>">
+                <%= link_to "вишлист", welcome_wishlist_url %>
+              </div>
+              <div class="A_MenuSection">
+                <%= link_to "профиль", profile_path(current_user.profile) %>
+              </div>
+
+
+              <div class="A_MenuSectionFour"><%= link_to "выйти", destroy_user_session_path, method: :delete %></div>
+            <% else %>
+            <div class="A_MenuSectionFour"><%= link_to "войти", new_user_session_path %></div>
+              <%#= link_to "зарегестрироваться", new_user_registration_path %>
+            <% end %>
+        </div>
+    </div>
   </div>
 </div>
