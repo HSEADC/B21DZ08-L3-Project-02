@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_27_211916) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_24_115803) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "plant_id"
@@ -61,6 +61,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_27_211916) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "supports", force: :cascade do |t|
+    t.string "email"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

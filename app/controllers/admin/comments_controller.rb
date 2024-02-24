@@ -72,7 +72,7 @@ class Admin::CommentsController < ApplicationController
     end
 
     def set_plant
-      @plant = Plant.find(params[:plant_id])
+      @plant = Plant.friendly.find(params[:plant_id])
     end
 
     # Only allow a list of trusted parameters through.

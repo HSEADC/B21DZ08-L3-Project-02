@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  
+
   devise_for :users
 
   namespace :api do
@@ -22,6 +25,8 @@ Rails.application.routes.draw do
   get 'welcome/profile'
   get 'welcome/wishlist'
   get 'welcome/myswaps'
+
+  post 'support/request_support'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
