@@ -16,10 +16,10 @@
   </head>
 
   <body>
-
-
+  <%#= @guest.token %>
+  <%#= api_v1_sign_in_url %>
   <%= render 'menubar' %>
-
+  
     <%= yield %>
 
     <%= render 'footer' %>
