@@ -23,9 +23,9 @@
       <% idea_counter = 0 %> 
       <% @ideas.each do |idea| %>
         <% if idea_counter < 2 %>
-          <%= link_to [:admin, idea], class: 'M_IdeaCard' do %>
+          <%#= link_to [:admin, idea], class: 'M_IdeaCard' do %>
             <%= render partial: 'admin/ideas/ideaPreviewFeed', locals: { idea: idea } %>
-          <% end %>
+          <%# end %>
           <% idea_counter += 1 %>
         <% end %>
       <% end %>

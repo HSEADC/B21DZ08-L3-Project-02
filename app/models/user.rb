@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :ideas
   has_many :swaps
 
+  has_and_belongs_to_many :savedIdeas, class_name: 'Idea', foreign_key: 'user_id'
+
   has_one :profile
   after_create :create_profile
 

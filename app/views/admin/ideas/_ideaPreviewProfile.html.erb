@@ -1,4 +1,5 @@
 <div class="M_ProfileMyIdea">
+<%= render 'admin/ideas/savedIdeas_button', idea: idea %>
   <%= image_tag "base/save_white.svg", class: "Q_ProfileMyIdeaSave" %>
   <div class="A_ProfileMyIdea A_AverageRegularText">
       <%= idea.title %>
@@ -8,4 +9,5 @@
       <% else %>
       <div></div>
     <% end %>
+    
 </div>

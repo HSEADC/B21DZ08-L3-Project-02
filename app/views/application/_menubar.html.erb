@@ -29,6 +29,11 @@
               <div class="A_MenuSection <%= 'active' if current_page?(welcome_wishlist_path) %>">
                 <%= link_to "вишлист", welcome_wishlist_url %>
               </div>
+              <div class="A_MenuSection <%= 'active' if current_page?(welcome_wishlist_path) %>">
+                <%= link_to welcome_savedIdeas_url do %>
+                  <%= image_tag "base/fav_icon.svg", class: "Q_Icon" %>
+                 <% end %>
+              </div>
               <div class="A_MenuSection">
                 <%= link_to "профиль", profile_path(current_user.profile) %>
               </div>

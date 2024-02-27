@@ -26,4 +26,8 @@ class WelcomeController < ApplicationController
     @plants = Plant.all
     @ideas = Idea.all
   end
+
+  def savedIdeas
+    @savedIdeas = current_user.savedIdeas
+  end
 end

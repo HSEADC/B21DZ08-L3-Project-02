@@ -1,39 +1,42 @@
 
-<div class="M_IdeaCardImg">
-  <% if idea.idea_image.present? %>
-    <%= image_tag idea.idea_image.url, class: "A_IdeaCardImg" %>
-  <% else %>
-    <%= image_tag "", class: "A_IdeaCardImg" %>
-  <% end %>
-</div>
 
-<div class="M_IdeaCardInfo">
-  <div class="M_IdeaCardInfoFirst">
-    <div class="M_IdeaCardInfoFirstSub">
-        <div class="M_IdeaCardInfoAvatar">
-          <% if idea.user.profile.profile_image.file.present? %>
-            <%= image_tag idea.user.profile.profile_image.url, class: "A_ProfileAvatarImg" %>
-          <% else %>
-            <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg", alt: "Default Avatar" %>
-          <% end %>
-        </div>
-        <div class="M_IdeaCardInfoNickname A_AverageRegularText">
-          <%= idea.user.profile.username %>
-        </div>
-    </div>
-    <div class="M_IdeaCardInfoSave">
-      <%= image_tag "base/save.svg", class: "Q_Save" %>
-    </div>
+<div class="M_IdeaCard">
+  <div class="M_IdeaCardImg">
+    <% if idea.idea_image.present? %>
+      <%= image_tag idea.idea_image.url, class: "A_IdeaCardImg" %>
+    <% else %>
+      <%= image_tag "", class: "A_IdeaCardImg" %>
+    <% end %>
   </div>
 
-  <div class="M_IdeaCardInfoSecond">
-    <div class="M_IdeaCardInfoDescTime">
-      <div class="A_MediumText"><%= idea.title %></div>
+  <div class="M_IdeaCardInfo">
+    <div class="M_IdeaCardInfoFirst">
+      <div class="M_IdeaCardInfoFirstSub">
+          <div class="M_IdeaCardInfoAvatar">
+            <% if idea.user.profile.profile_image.file.present? %>
+              <%= image_tag idea.user.profile.profile_image.url, class: "A_ProfileAvatarImg" %>
+            <% else %>
+              <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg", alt: "Default Avatar" %>
+            <% end %>
+          </div>
+          <div class="M_IdeaCardInfoNickname A_AverageRegularText">
+            <%= idea.user.profile.username %>
+          </div>
+      </div>
+      <div class="M_IdeaCardInfoSave">
+        <%= render 'admin/ideas/savedIdeas_button', idea: idea %>
+      </div>
     </div>
 
-    <div class="M_IdeaCardInfoLink">
-        <div class="A_AverageRegularText">перейти к мысли</div>
-        <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %> 
+    <div class="M_IdeaCardInfoSecond">
+      <div class="M_IdeaCardInfoDescTime">
+        <div class="A_MediumText"><%= idea.title %></div>
+      </div>
+
+      <div class="M_IdeaCardInfoLink">
+          <div class="A_AverageRegularText">перейти к мысли</div>
+          <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %> 
+      </div>
     </div>
   </div>
 </div>

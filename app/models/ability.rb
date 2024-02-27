@@ -14,6 +14,7 @@ class Ability
       #   can :manage, Comment, user_id: user.id
       # end 
 
+    # can :toggle_savedIdeas, Idea
     # can :edit, Comment, user_id: user.id
     # can :update, Comment, user_id: user.id
     # can :destroy, Comment, user_id: user.id

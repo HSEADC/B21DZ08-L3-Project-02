@@ -1,6 +1,6 @@
 class Admin::IdeasController < ApplicationController
   load_and_authorize_resource
-  before_action :set_idea, only: %i[ show edit update destroy ]
+  before_action :set_idea, only: %i[ show edit update destroy toggle_savedIdeas]
 
   # GET /ideas or /ideas.json
   def index
@@ -59,6 +59,27 @@ class Admin::IdeasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_ideas_url, notice: "Idea was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  
+  def toggle_savedIdeas
+    idea_user_ids = []
+  
+    @idea.users.each do |user|
+      idea_user_ids << user.id
+    end
+  
+    if idea_user_ids.include?(current_user.id)
+      current_user.savedIdeas.delete(@idea)
+    else
+      current_user.savedIdeas << @idea
+    end
+
+    set_idea
+  
+    respond_to do |format|
+      format.turbo_stream
     end
   end
 
