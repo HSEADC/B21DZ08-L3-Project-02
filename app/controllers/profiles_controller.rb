@@ -1,10 +1,11 @@
 class ProfilesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_profile, only: %i[ show edit update destroy ]
 
   def show
     @plants = Plant.all
     @ideas = Idea.all
-    @profile = Profile.find(params[:id])
+    @profile
   end
 
   def edit

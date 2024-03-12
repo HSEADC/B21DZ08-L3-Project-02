@@ -23,12 +23,25 @@ Rails.application.routes.draw do
 
   resources :subscriptions, only: [:create, :show]
   resources :swaps
+  resources :plants do
+    resources :comments, except: :show
+    resources :notes, except: :show
+    get "/by_tag/:tag", to: "plants#by_tag", on: :collection, as: "tagged"
+  end
+  resources :ideas do
+    member do
+      match 'toggle_savedIdeas', to: 'ideas#toggle_savedIdeas', as: 'toggle_savedIdeas', via: [:get, :post]
+    end
+  end
+
+  root "welcome#main"
+
+
   get 'welcome/main'
   get 'welcome/index'
   get 'welcome/about'
   get 'welcome/feed'
   get 'welcome/exchange'
-  get 'welcome/profile'
   get 'welcome/wishlist'
   get 'welcome/myswaps'
   get 'welcome/savedIdeas'
@@ -37,12 +50,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "welcome#main"
-  resources :ideas do
-    member do
-      match 'toggle_savedIdeas', to: 'ideas#toggle_savedIdeas', as: 'toggle_savedIdeas', via: [:get, :post]
-    end
-  end
+  
+  
 
   namespace :admin do
     resources :plants do

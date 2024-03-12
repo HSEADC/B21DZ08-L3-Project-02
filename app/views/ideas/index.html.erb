@@ -2,12 +2,12 @@
 
 <h1>Мысли</h1>
 
-<%= link_to "Есть мысль!", new_admin_idea_path, class: 'addButton' %>
+<%= link_to "Есть мысль!", new_idea_path, class: 'addButton' %>
 
 <div id="ideas">
   <% @ideas.each do |idea| %>
 
-    <%= link_to [:admin, idea], class: 'plantCard' do %>
+    <%= link_to idea, class: 'plantCard' do %>
       <%= render idea %>
     <% end %>
   <% end %>

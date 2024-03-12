@@ -29,6 +29,7 @@ class Api::V1::PlantsController < Api::V1::ApplicationController
   
   end
 
+  private
   def plant_params
     params.require(:plant).permit(:name, :description, :plant_image, :tag_list, :category_list)
   end

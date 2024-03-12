@@ -1,12 +1,11 @@
 body {
-  /* padding: 0% 3.85%; */
   overflow-x: hidden;
-  background-color: var(--white);
+  background-color: var(--body);
   color: var(--our-black);
   text-decoration: none;
 }
 .S_BodyPadding {
-  padding: 0% 3.85%;
+  padding: 0% 3.54%;
 }
 
 .plantCard {

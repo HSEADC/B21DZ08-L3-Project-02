@@ -1,4 +1,4 @@
-class Admin::CommentsController < ApplicationController
+class CommentsController < ApplicationController
   # before_action :authenticate_user!, only: %i[ new edit create update destroy ]
   load_and_authorize_resource
   before_action :set_comment, only: %i[ show edit update destroy ]

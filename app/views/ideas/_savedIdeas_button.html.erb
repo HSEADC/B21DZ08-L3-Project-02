@@ -7,6 +7,6 @@ end
 savedIdeas_link_image = idea_user_ids.include?(current_user.id) ? 'a' : 'b'
 %>
 <%= turbo_frame_tag dom_id(idea) do %>
-  <%= link_to savedIdeas_link_image, toggle_savedIdeas_admin_idea_path(idea), data: { turbo_stream: true } %>
+  <%= link_to savedIdeas_link_image, toggle_savedIdeas_idea_path(idea), data: { turbo_stream: true } %>
  # <%#= image_tag "base/save.svg", class: "Q_Save" %>
 <% end %>

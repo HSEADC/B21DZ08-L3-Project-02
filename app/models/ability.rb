@@ -4,9 +4,29 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-      # if user && user.admin == true
+    user ||= Guest.new
+
+    if user && user.admin == true
       can :manage, :all
-      
+    end
+
+    if user.is_a?(Guest)
+      can :read, Profile
+      # Add other permissions for guest users as needed
+    else
+      can :toggle_savedIdeas, Idea
+      can :manage, Plant, user_id: user.id
+      can :manage, Idea, user_id: user.id
+      can :manage, Swap, user_id: user.id
+      can :manage, Comment, user_id: user.id
+      can :manage, Profile, user_id: user.id
+    end
+
+    can :read, Profile, user_id: user.id
+    can :read, Plant
+    can :create, Comment
+  end
+end    
   # end
 
       # if user
@@ -43,5 +63,4 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
-  end
-end
+ 

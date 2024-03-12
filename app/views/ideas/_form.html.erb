@@ -1,4 +1,4 @@
-<%= form_with(model:[:admin, idea]) do |form| %>
+<%= form_with(model: idea) do |form| %>
   <% if idea.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(idea.errors.count, "error") %> prohibited this idea from being saved:</h2>

@@ -59,7 +59,7 @@
   </div>
   <div class="C_ProfileCardsIdeas">
     <div class="M_ProfileIdeasPlus">
-    <%= link_to new_admin_idea_path do %>
+    <%= link_to new_idea_path do %>
       <%= image_tag "base/profile_ideas_plus.svg", class: "Q_Edit" %>
       <% end %>
     </div>
@@ -67,8 +67,8 @@
     <% @ideas.reverse.each do |idea| %>
       <% if current_user && idea.user_id == current_user.id %>
         <% if idea_counter < 4 %>
-          <%= link_to [:admin, idea], class: 'M_SwapCard' do %>
-            <%= render partial: 'admin/ideas/ideaPreviewProfile', locals: { idea: idea } %>
+          <%= link_to idea, class: 'M_SwapCard' do %>
+            <%= render partial: 'ideas/ideaPreviewProfile', locals: { idea: idea } %>
           <% end %>
           <% idea_counter += 1 %>
         <% end %>
@@ -82,14 +82,14 @@
         <div class="A_ProfilePlantsFilterElement A_RegularText">Полки</div>
     </div>
     <div>
-      <%= link_to "Добавить растение", new_admin_plant_path, class: 'A_NewPlantButton orange A_RegularText' %>
+      <%= link_to "Добавить растение", new_plant_path, class: 'A_NewPlantButton orange A_RegularText' %>
     </div>
   </div>
     <div class="C_ProfileCards">
     <% @plants.reverse.each do |plant| %>
       <% if current_user && plant.user_id == current_user.id %>
-        <%= link_to [:admin, plant], class: 'M_SwapCard' do %>
-          <%= render partial: 'admin/plants/plantPreview', locals: { plant: plant } %>
+        <%= link_to plant, class: 'M_SwapCard' do %>
+          <%= render partial: 'plants/plantPreview', locals: { plant: plant } %>
         <% end %>
       <% end %>
     <% end %>

@@ -4,7 +4,7 @@
     <div class="A_Title">
       <%= plant.name %>
     </div>
-    <%= link_to edit_admin_plant_path(@plant) do %>
+    <%= link_to edit_plant_path(@plant) do %>
       <%= image_tag "base/plant_edit.svg", class: "Q_Icon" %>
     <% end %>
 
@@ -67,7 +67,7 @@
           </div>
 
           <div class="W_CommentButton A_SmallRegularText">
-            <%= link_to "Написать комментарий", new_admin_plant_comment_path(@plant), class: "A_CommentButton" %>
+            <%= link_to "Написать комментарий", new_plant_comment_path(@plant), class: "A_CommentButton" %>
           </div>
       </div>
 
@@ -79,7 +79,7 @@
   <div class="C_PlantProfileNotes">
     <div class="M_PlantProfileNotesInfo">
       <div class="A_SecondTitle">История растения</div>
-      <%= link_to "Сделать дневниковую запись", new_admin_plant_note_path(@plant), class: 'A_NewPlantButton grey A_RegularText'  %>
+      <%= link_to "Сделать дневниковую запись", new_plant_note_path(@plant), class: 'A_NewPlantButton grey A_RegularText'  %>
     </div>
     <div class="A_PlantProfileNoteArrow">
       <%= image_tag "base/notes_arrow.svg", class: "Q_Edit" %>

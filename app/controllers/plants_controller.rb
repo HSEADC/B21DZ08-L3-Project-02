@@ -1,4 +1,4 @@
-class Admin::PlantsController < ApplicationController
+class PlantsController < ApplicationController
   load_and_authorize_resource
   before_action :set_plant, only: %i[ show edit update destroy ]
 
@@ -49,7 +49,7 @@ class Admin::PlantsController < ApplicationController
   def update
     respond_to do |format|
       if @plant.update(plant_params)
-        format.html { redirect_to admin_plant_url(@plant), notice: "Plant was successfully updated." }
+        format.html { redirect_to plant_url(@plant), notice: "Plant was successfully updated." }
         format.json { render :show, status: :ok, location: @plant }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -63,7 +63,7 @@ class Admin::PlantsController < ApplicationController
     @plant.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_plants_url, notice: "Plant was successfully destroyed." }
+      format.html { irect_to profile_url(@profile), notice: "Plant was successfully destroyed." }
       format.json { head :no_content }
     end
   end

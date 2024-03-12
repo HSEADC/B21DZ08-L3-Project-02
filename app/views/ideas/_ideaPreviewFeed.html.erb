@@ -24,7 +24,9 @@
           </div>
       </div>
       <div class="M_IdeaCardInfoSave">
-        <%= render 'admin/ideas/savedIdeas_button', idea: idea %>
+        <% if user_signed_in? %>
+         <%= render 'ideas/savedIdeas_button', idea: idea %>
+        <% end %>
       </div>
     </div>
 
