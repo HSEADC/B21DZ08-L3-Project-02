@@ -61,9 +61,10 @@ class PlantsController < ApplicationController
   # DELETE /plants/1 or /plants/1.json
   def destroy
     @plant.destroy
+    @profile = current_user.profile
 
     respond_to do |format|
-      format.html { irect_to profile_url(@profile), notice: "Plant was successfully destroyed." }
+      format.html { redirect_to profile_url(@profile), notice: "Plant was successfully destroyed." }
       format.json { head :no_content }
     end
   end

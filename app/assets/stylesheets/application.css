@@ -17,3 +17,6 @@
  *= require_tree ./components
  *= require_tree ./1_modulo
  */
+ .hidden{
+  display: none;
+}

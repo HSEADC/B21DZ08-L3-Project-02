@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root "welcome#main"
+  root "welcome#feed"
 
 
   get 'welcome/main'
@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   get 'welcome/wishlist'
   get 'welcome/myswaps'
   get 'welcome/savedIdeas'
+
+
 
   post 'support/request_support'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -8,7 +8,7 @@
       <%= image_tag "base/plant_edit.svg", class: "Q_Icon" %>
     <% end %>
 
-    <%= button_to [:admin, @plant], method: :delete, class: "custom-button" do %>
+    <%= button_to @plant, method: :delete, class: "custom-button" do %>
       <%= image_tag "base/plant_bin.svg", class: "Q_Icon" %>
       
     <% end %>
