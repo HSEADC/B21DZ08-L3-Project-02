@@ -19,9 +19,12 @@
               <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg", alt: "Default Avatar" %>
             <% end %>
           </div>
+
+          <%= link_to profile_path(idea.user.profile) do %>
           <div class="M_IdeaCardInfoNickname A_AverageRegularText">
-            <%= idea.user.profile.username %>
+              <%= idea.user.profile.username %>
           </div>
+          <% end %>
       </div>
       <div class="M_IdeaCardInfoSave">
         <% if user_signed_in? %>
@@ -35,10 +38,13 @@
         <div class="A_MediumText"><%= idea.title %></div>
       </div>
 
-      <div class="M_IdeaCardInfoLink">
-          <div class="A_AverageRegularText">перейти к мысли</div>
-          <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %> 
-      </div>
+      <%= link_to idea do %>
+        <div class="M_IdeaCardInfoLink">
+            <div class="A_AverageRegularText">перейти к мысли</div>
+            <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %> 
+        </div>
+      <% end %>
+
     </div>
   </div>
 </div>

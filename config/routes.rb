@@ -65,6 +65,7 @@ Rails.application.routes.draw do
     end
 
     resources :ideas do
+      resources :users
       member do
         match 'toggle_savedIdeas', to: 'ideas#toggle_savedIdeas', as: 'toggle_savedIdeas', via: [:get, :post]
       end

@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
   def feed
     @plants = Plant.all
     @ideas = Idea.all
-    @profile = User.find_by(id: params[:user_id])
+
   end
 
   def exchange

@@ -12,6 +12,7 @@ class Ability
 
     if user.is_a?(Guest)
       can :read, Profile
+      can :read, Idea
       # Add other permissions for guest users as needed
     else
       can :toggle_savedIdeas, Idea
@@ -22,8 +23,9 @@ class Ability
       can [:read, :update], Profile, user_id: user.id
     end
 
-    can :read, Profile, user_id: user.id
+    can :read, Profile
     can :read, Plant
+    can :read, Idea
     can :create, Comment
   end
 end    

@@ -37,36 +37,19 @@
   justify-content: center;
   width: fit-content;
 
-  &:hover {
-  }
   a {
     font-family: 'Atyp Text Regular', sans-serif;
     font-weight: 300;
     font-size: 24px;
     text-decoration: none;
     color: var(--our-black);
-  }
-}
-.A_MenuSection.active {
-  
-}
-.A_MenuSectionFour {
-  background-color: var(--menu-grey);
-  display: inline-flex;
-  padding: 0px 30px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 14px;
-  width: fit-content;
 
-  a {
-    font-family: 'Atyp Text Regular', sans-serif;
-    font-weight: 300;
-    font-size: 24px;
-    text-decoration: none;
-    color: var(--our-black);
+    &:hover {
+      color: var(--button-grey);
+    }
   }
 }
+
 .Q_TelegramImage {
   width: 24px;
   height: 24px;
@@ -81,10 +64,12 @@
   height: 2vw;
   overflow: hidden;
   border-radius: 50%;
+  &:hover{
+    box-shadow: 0 0 10px var(--button-grey);
+  }
 }
 .Q_HeaderAvatar{
   width: 2vw;
-
 }
 .hidden{
   display: none;

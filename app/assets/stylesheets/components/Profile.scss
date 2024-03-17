@@ -37,39 +37,70 @@
     height: 24px;
   }
 }
-
-.M_ProfileMyIdea {
-  width: 14.79vw;
-  height: 15vh;
-  overflow: hidden;
-  border-radius: 14px;
-  position: relative;
-
-  .Q_ProfileMyIdeaSave {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 14px;
-    z-index: 1;
-  }
-
-  .A_ProfileMyIdea {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 14px;
-    z-index: 1;
-    color: var(--white);
-  }
-  .A_ProfileMyIdeaCover {
+.C_ProfileCardsIdeas {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.83vw;
+  padding: 0px 0px 30px 0px;
+  .M_ProfileMyIdea {
     position: relative;
-    width: 14.79vw;
-    height: 15vh;
-    object-fit: cover;
-    background-size: cover;
-    background-position: center;
-    filter: blur(8px) brightness(0.8);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: white;
+    
+  
+    .Q_ProfileMyIdeaSave {
+      top: 0;
+      right: 0;
+      padding: 14px;
+      z-index: 1;
+    }
+    .W_ProfileMyIdea{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+    .A_ProfileMyIdea {
+      width: 11.98vw;
+      color: var(--our-black);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
+    .A_ProfileMyIdeaCover {
+      width: 13.75vw;
+      height: 6.77vw;
+      border-radius: 14px;
+      object-fit: cover;
+      background-size: cover;
+      background-position: center;
+    
+    }
+  }
+  .M_ProfileIdeasPlus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9.38vw;
+    height: inherit;
+    border-radius: 14px;
+    background-color: white;
+
+    &:hover {
+      background-color: var(--input-grey-hover);
+    }
+  }
+}
+
+.Q_ProfileSave{
+  width: 0.94vw;
 }
 .C_ProfileTags {
   display: flex;
@@ -110,10 +141,10 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      background-color: var(--input-grey);
+      background-color: #F7F7F7;
       border-radius: 14px;
-      width: 9.58vw;
-      height: 13.89vh;
+      width: 6.98vw;
+      height: 5.1vw;
     }
   }
 }
@@ -143,27 +174,7 @@
     }
   }
 }
-.C_ProfileCardsIdeas {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 1.04vw;
-  row-gap: 30px;
-  padding: 0px 0px 30px 0px;
 
-  .M_ProfileIdeasPlus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 9.38vw;
-    height: 15vh;
-    border-radius: 14px;
-    background-color: var(--input-grey);
-
-    &:hover {
-      background-color: var(--input-grey-hover);
-    }
-  }
-}
 .M_ProfileIdeasBlock {
   display: flex;
   flex-direction: row;

@@ -11,8 +11,11 @@
   </div>
       <div class="A_Title"><%= @profile.username %></div>
     </div>
-      <%= link_to edit_profile_path(@profile) do %>
-        <%= image_tag "base/settings.svg", class: "Q_Icon" %>
+
+      <% if @profile.user == current_user %>
+        <%= link_to edit_profile_path(@profile) do %>
+          <%= image_tag "base/settings.svg", class: "Q_Icon" %>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -35,28 +38,30 @@
     <div class="C_ProfileInfoNumbers">
       <div class="M_ProfileInfoNumbersBlock">
         <div class="A_SecondTitle">19</div> 
-        <div class="A_AverageRegularText">Подписчики</div>
+        <div class="A_SmallRegularText">Подписчики</div>
       </div>
       <div class="M_ProfileInfoNumbersBlock">
         <div class="A_SecondTitle">22</div> 
-        <div class="A_AverageRegularText">Подписки</div>
+        <div class="A_SmallRegularText">Подписки</div>
       </div>
       <div class="M_ProfileInfoNumbersBlock">
-        <div class="A_SecondTitle"><%= current_user.plants.length%></div> 
-        <div class="A_AverageRegularText">Растения</div>
+        <div class="A_SecondTitle"><%= @profile.user.plants.length%></div> 
+        <div class="A_SmallRegularText">Растения</div>
       </div>
     </div>
 </div>
 
   <div class="M_ProfileIdeasBlock">
     <div class="A_SecondTitle">Мысли</div>
-    <% if current_user.ideas.count >= 4 %>
+    <% if @profile.user.ideas.count >= 4 %>
     <div class="A_ProfileIdeasBlockMore">
       <div class="A_AverageRegularText">посмотреть все</div>
       <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %>
     </div>
     <% end %>
   </div>
+
+
   <div class="C_ProfileCardsIdeas">
     <div class="M_ProfileIdeasPlus">
     <%= link_to new_idea_path do %>
@@ -65,9 +70,10 @@
     </div>
     <% idea_counter = 0 %>
     <% @ideas.reverse.each do |idea| %>
-      <% if current_user && idea.user_id == current_user.id %>
+      <% if @profile && idea.user_id == @profile.user.id %>
+      
         <% if idea_counter < 4 %>
-          <%= link_to idea, class: 'M_SwapCard' do %>
+          <%= link_to idea, class: 'link' do %>
             <%= render partial: 'ideas/ideaPreviewProfile', locals: { idea: idea } %>
           <% end %>
           <% idea_counter += 1 %>
@@ -75,23 +81,29 @@
       <% end %>
     <% end %>
   </div>
-
-  <div class="M_ProfilePlantsBlock">
-    <div class="C_ProfilePlantShelfFilter">
-        <div class="A_ProfilePlantsFilterElement Border A_RegularText">Сад</div>
-        <div class="A_ProfilePlantsFilterElement A_RegularText">Полки</div>
-    </div>
-    <div>
-      <%= link_to "Добавить растение", new_plant_path, class: 'A_NewPlantButton orange A_RegularText' %>
-    </div>
+<div data-controller="profile">
+  <div class="M_ProfilePlantsBlock" >
+  <div class="C_ProfilePlantShelfFilter">
+    <div id="garden" class="A_ProfilePlantsFilterElement Border A_RegularText" data-action="click->profile#showGarden">Сад</div>
+    <div id="shelves" class="A_ProfilePlantsFilterElement A_RegularText" data-action="click->profile#showShelves">Полки</div>
   </div>
-    <div class="C_ProfileCards">
-    <% @plants.reverse.each do |plant| %>
-      <% if current_user && plant.user_id == current_user.id %>
-        <%= link_to plant, class: 'M_SwapCard' do %>
-          <%= render partial: 'plants/plantPreview', locals: { plant: plant } %>
-        <% end %>
-      <% end %>
+  <div>
+    <% if @profile.user == current_user %>
+      <%= link_to "Добавить растение", new_plant_path, class: 'A_NewPlantButton orange A_RegularText' %>
     <% end %>
   </div>
+</div>
+
+<div class="C_ProfileCards" data-profile-target="cards">
+  <% @plants.reverse.each do |plant| %>
+    <% if @profile && plant.user_id == @profile.user.id %>
+      <%= link_to plant, class: 'M_SwapCard' do %>
+        <%= render partial: 'plants/plantPreview', locals: { plant: plant } %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="C_ProfileShelves hidden" data-profile-target="shelves">полки</div>
+</div>
 </div>

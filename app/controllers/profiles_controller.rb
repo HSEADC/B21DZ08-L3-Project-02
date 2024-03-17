@@ -3,9 +3,9 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[ show edit update destroy ]
 
   def show
-    @plants = Plant.all
-    @ideas = Idea.all
-    @profile
+    @profile = Profile.find(params[:id]) 
+    @plants = @profile.user.plants
+    @ideas = @profile.user.ideas
   end
 
   def edit
