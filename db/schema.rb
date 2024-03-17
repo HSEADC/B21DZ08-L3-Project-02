@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_25_184212) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_17_203604) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "plant_id"
@@ -60,6 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_25_184212) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "plant_image"
+    t.integer "shelf_id"
+    t.index ["shelf_id"], name: "index_plants_on_shelf_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -70,6 +72,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_25_184212) do
     t.datetime "updated_at", null: false
     t.string "location"
     t.string "profile_image"
+  end
+
+  create_table "shelves", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -140,5 +150,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_25_184212) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "plants", "shelves"
   add_foreign_key "taggings", "tags"
 end

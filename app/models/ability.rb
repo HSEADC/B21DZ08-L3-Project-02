@@ -20,6 +20,7 @@ class Ability
       can :manage, Idea, user_id: user.id
       can :manage, Swap, user_id: user.id
       can :manage, Comment, user_id: user.id
+      can :manage, Shelf, user_id: user.id
       can [:read, :update], Profile, user_id: user.id
     end
 

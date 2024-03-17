@@ -2,6 +2,7 @@ class Plant < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_many :notes
     belongs_to :user
+    belongs_to :shelf
     mount_uploader :plant_image, PlantImageUploader
 
     acts_as_taggable_on :tags

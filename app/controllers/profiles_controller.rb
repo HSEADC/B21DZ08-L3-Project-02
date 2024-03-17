@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id]) 
     @plants = @profile.user.plants
     @ideas = @profile.user.ideas
+    @shelves = @profile.user.shelves
   end
 
   def edit

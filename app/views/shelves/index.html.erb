@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Shelves</h1>
+
+<div id="shelves">
+<% @shelves.each do |shelf| %>
+  <h2><%= shelf.title %></h2>
+  <% shelf.plants.each do |plant| %>
+    <p><%= plant.name %></p>
+  <% end %>
+<% end %>
+</div>
+
+<%= link_to "New shelf", new_shelf_path %>

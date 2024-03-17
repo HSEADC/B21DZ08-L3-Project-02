@@ -97,6 +97,9 @@
       </div>
     </div>
 
+    <%= form.label :shelf_id %>
+      <%= form.collection_select :shelf_id, current_user.shelves, :id, :title, prompt: "Выберите полку" %>
+
     <div class="M_FormSection">
     
       <div class="M_FormSectionName">

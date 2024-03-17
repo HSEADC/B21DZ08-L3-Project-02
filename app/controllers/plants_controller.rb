@@ -77,6 +77,6 @@ class PlantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def plant_params
-      params.require(:plant).permit(:name, :description, :plant_image, :tag_list, :category_list).merge(user_id: current_user.id)
+      params.require(:plant).permit(:name, :description, :plant_image, :tag_list, :category_list, :shelf_id).merge(user_id: current_user.id)
     end
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shelves
 
   
 
@@ -33,7 +34,8 @@ Rails.application.routes.draw do
       match 'toggle_savedIdeas', to: 'ideas#toggle_savedIdeas', as: 'toggle_savedIdeas', via: [:get, :post]
     end
   end
-
+  resources :shelves
+  
   root "welcome#feed"
 
 

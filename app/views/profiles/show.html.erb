@@ -104,6 +104,13 @@
   <% end %>
 </div>
 
-<div class="C_ProfileShelves hidden" data-profile-target="shelves">полки</div>
+  <div class="C_ProfileShelves hidden" data-profile-target="shelves">
+    <% @shelves.each do |shelf| %>
+      <h2><%= shelf.title %></h2>
+      <% shelf.plants.each do |plant| %>
+        <p><%= plant.name %></p>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 </div>
