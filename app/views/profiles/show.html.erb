@@ -84,8 +84,8 @@
 <div data-controller="profile">
   <div class="M_ProfilePlantsBlock" >
   <div class="C_ProfilePlantShelfFilter">
-    <div id="garden" class="A_ProfilePlantsFilterElement Border A_RegularText" data-action="click->profile#showGarden">Сад</div>
-    <div id="shelves" class="A_ProfilePlantsFilterElement A_RegularText" data-action="click->profile#showShelves">Полки</div>
+    <div id="garden" class="A_ProfilePlantsFilterElement active A_RegularText" data-action="click->profile#showGarden" data-profile-target="cardsButton">Сад</div>
+    <div id="shelves" class="A_ProfilePlantsFilterElement A_RegularText" data-action="click->profile#showShelves" data-profile-target="shelvesButton">Полки</div>
   </div>
   <div>
     <% if @profile.user == current_user %>

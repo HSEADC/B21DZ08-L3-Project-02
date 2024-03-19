@@ -90,15 +90,13 @@
 
       <div class="M_FormSectionContent">
         <div class="M_FormShelf">
-          <%= form.label "Выберете полку", class: "A_MediumText", style: "display: block" %>
+          <%= form.label "Выберите полку", class: "A_MediumText", style: "display: block" %>
           <br>
-          <%= form.text_field :category_list, class: "A_FormInput A_RegularText", value: plant.category_list .join(', ') %>
-        </div>
+          <%= form.collection_select :shelf_id, current_user.shelves, :id, :title, prompt: "Выберите полку" %>
+          </div>
       </div>
     </div>
 
-    <%= form.label :shelf_id %>
-      <%= form.collection_select :shelf_id, current_user.shelves, :id, :title, prompt: "Выберите полку" %>
 
     <div class="M_FormSection">
     

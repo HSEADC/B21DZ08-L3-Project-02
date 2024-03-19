@@ -34,9 +34,7 @@
 
 
       <% if plant.shelf.present? %>
-      <%= link_to @plant.shelf do %>
-        <p>Полка: <%= @plant.shelf.title %></p>
-      <% end %>
+        <%= render 'shelves/shelfPlant', shelf: @plant.shelf %>
       <% else %>
           <div></div>
         <% end %>

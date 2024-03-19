@@ -11,6 +11,7 @@ class WelcomeController < ApplicationController
   def feed
     @plants = Plant.all
     @ideas = Idea.all
+    @shelves = Shelf.all
 
   end
 

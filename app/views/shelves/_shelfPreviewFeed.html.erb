@@ -1,0 +1,34 @@
+<div class="M_ShelfPreviewCard">
+  <div class="W_ShelfPreview_Info">
+
+    <div class="W_ShelfSideInfo">
+      <div class="A_MediumText">
+        <%= shelf.title %>
+      </div>
+
+      <div class="A_RegularText grey-color">
+        полка <%= shelf.user.profile.username %>
+      </div>
+    </div>
+
+    <%= link_to shelf, class: "A_PreviewGoToShelfLink" do %>
+      <div class="A_AverageRegularText">
+        Перейти к полке
+      </div>
+      <%= image_tag "base/circle_arrow_right.svg", class: "Q_IconMedium" %>
+    <% end %>
+  </div>
+  <div class="С_ShelfPreviewImages">
+    <% plant_counter = 0 %>
+    <% if shelf.plants.any? %>
+      <% shelf.plants.each do |plant| %>
+        <% if plant_counter < 3 %>
+          <div class="W_ShelfPreviewPlant">
+            <%= image_tag plant.plant_image.url, class: "Q_ShelfPreviewPlant" %>
+          </div>
+        <% end %>
+        <% plant_counter += 1 %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

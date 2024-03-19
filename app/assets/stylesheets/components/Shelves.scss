@@ -1,0 +1,114 @@
+
+// ПОЛКА ВНУТРИ СТРАНИЦЫ ЦВЕТКА
+.M_ShelfMiniPreview{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--white);
+  width: 22.6vw;
+  height: 6.15vw;
+  border-radius: 14px;
+  padding: 14px;
+
+  .W_ShelfMiniPreview_Info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .A_MiniPreviewGoToShelfLink{
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--black);
+      align-items: center;
+
+      &:hover {
+        opacity: 70%;
+      }
+    }
+  }
+  .C_ShelfMiniPreviewImages{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+
+    .W_ShelfMiniPreviewPlant{
+      width:3.75vw;
+      height:4.69vw;
+      border-radius: 8px;
+      overflow: hidden;
+
+      .Q_ShelfMiniPreviewPlant{
+        height: -webkit-fill-available;
+        width:-webkit-fill-available;
+        object-fit: cover;
+      }
+    }
+  }
+}
+// ПОЛКА В ФИДЕ
+.M_ShelfPreviewCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--white);
+  width: 46.04vw;
+  height: 15.63vw;
+  border-radius: 14px;
+  padding: 30px;
+
+  .W_ShelfPreview_Info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .W_ShelfSideInfo{
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 13.54vw;
+    }
+
+    .A_PreviewGoToShelfLink{
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--black);
+      align-items: center;
+
+      &:hover {
+        opacity: 70%;
+      }
+    }
+  }
+  .С_ShelfPreviewImages{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .W_ShelfPreviewPlant{
+      width: 9.06vw;
+      height: 12.19vw;
+      border-radius: 8px;
+      overflow: hidden;
+
+      &:first-child{
+        transform: rotate(-2deg);
+      }
+      &:nth-child(2n){
+        transform: rotate(1deg);
+      }
+
+      .Q_ShelfPreviewPlant{
+        height: -webkit-fill-available;
+        width:-webkit-fill-available;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.grey-color{
+  color: var(--grey-text);
+}

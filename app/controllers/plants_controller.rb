@@ -18,6 +18,11 @@ class PlantsController < ApplicationController
   # GET /plants/1 or /plants/1.json
   def show
     @user = @plant.user
+    if @plant && @plant.shelf
+      @plants = @plant.shelf.plants
+    else
+      @plants = []
+    end
   end
 
   # GET /plants/new
