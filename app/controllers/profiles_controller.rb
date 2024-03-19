@@ -7,6 +7,8 @@ class ProfilesController < ApplicationController
     @plants = @profile.user.plants
     @ideas = @profile.user.ideas
     @shelves = @profile.user.shelves
+    @followers = @profile.user.followers
+    @followings = @profile.user.following_users
   end
 
   def edit

@@ -20,6 +20,12 @@ class User < ApplicationRecord
   has_one :profile
   after_create :create_profile
 
+  has_many :followships, foreign_key: :follower_id
+  has_many :followers, through: :followships, source: :followee
+
+  has_many :inverse_followships, foreign_key: :followee_id, class_name: 'Followship'
+  has_many :following_users, through: :inverse_followships, source: :follower
+
   def create_profile
     Profile.create(user_id: id)
     # Profile.create(user_id: id, username: "test", about: "Люблю кактус")

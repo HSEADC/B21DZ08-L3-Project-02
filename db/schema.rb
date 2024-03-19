@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_17_203604) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_19_141247) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "plant_id"
@@ -18,6 +18,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_17_203604) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "reply_to_comment_id"
+  end
+
+  create_table "followships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followee_id"], name: "index_followships_on_followee_id"
+    t.index ["follower_id", "followee_id"], name: "index_followships_on_follower_id_and_followee_id", unique: true
+    t.index ["follower_id"], name: "index_followships_on_follower_id"
   end
 
   create_table "guests", force: :cascade do |t|

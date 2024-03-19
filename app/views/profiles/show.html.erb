@@ -20,6 +20,39 @@
     </div>
   </div>
 
+
+
+
+  <% if current_user != @profile.user %>
+  <% if current_user.followers.include?(@profile.user) %>
+    <%= button_to 'Отписаться', unfollow_user_path(@profile.user), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= button_to 'Подписаться', follow_user_path(@profile.user), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
+<h2>Подписки</h2>
+<% if @followers.any? %>
+  <% @followers.each do |follower| %>
+    <%= link_to follower.profile.username, follower.profile %><br>
+  <% end %>
+<% else %>
+  <p>Нет подписчиков</p>
+<% end %>
+
+<h2>Подписчики</h2>
+<% if @followings.any? %>
+  <% @followings.each do |following| %>
+    <%= link_to following.profile.username, following.profile %><br>
+  <% end %>
+<% else %>
+  <p>Нет подписок</p>
+<% end %>
+
+
+
+
+
   <div class="M_ProfileInfo">
     <div class="M_ProfileInfoBasic">
       <div class="M_ProfileInfoLocation A_AverageMediumText">
