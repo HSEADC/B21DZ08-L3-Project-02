@@ -8,7 +8,7 @@
 <div id="comments" class="many">
   <% @comments.each do |comment| %>
   
-      <%= link_to [:admin, comment], class:"dec" do%>
+      <%= link_to comment, class:"dec" do%>
       <%= render comment %>
     <% end %>
   <% end %>

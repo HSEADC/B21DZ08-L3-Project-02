@@ -85,14 +85,17 @@
 </div>
 
   <div class="M_ProfileIdeasBlock">
+
     <div class="A_SecondTitle">Мысли</div>
-    <% if @profile.user.ideas.count >= 4 %>
-    <div class="A_ProfileIdeasBlockMore">
-      <div class="A_AverageRegularText">посмотреть все</div>
-      <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %>
+      <% if @profile.user.ideas.count >= 4 %>
+      <%= link_to allIdeas_profile_url(@profile) do %>
+          <div class="A_ProfileIdeasBlockMore">
+            <div class="A_AverageRegularText">посмотреть все</div>
+            <%= image_tag "base/circle_arrow_right.svg", class: "Q_Edit" %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-    <% end %>
-  </div>
 
 
   <div class="C_ProfileCardsIdeas">

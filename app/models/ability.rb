@@ -17,6 +17,7 @@ class Ability
     else
       can :toggle_like, Plant
       can :toggle_savedIdeas, Idea
+      can :create, Comment
       can :manage, Plant, user_id: user.id
       can :manage, Idea, user_id: user.id
       can :manage, Swap, user_id: user.id
@@ -24,7 +25,7 @@ class Ability
       can :manage, Shelf, user_id: user.id
       can [:read, :update], Profile, user_id: user.id
     end
-
+    can :allIdeas, Profile
     can :read, Profile
     can :read, Plant
     can :read, Shelf

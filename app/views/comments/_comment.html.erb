@@ -1,24 +1,26 @@
 <div id="<%= dom_id comment %>" class="W_PlantComment">
   
   <div class="A_AverageMediumText">
-    <%= comment.user.email %>
+    <%= comment.user.profile.username %>
   </div>
   
   <div class="A_AverageRegularText">
     <%= comment.body %>
   </div>
 
-  <% if can? :manage, comment %>
+ 
   <div class="C_PlantCommentActions">
     <div class="A_PlantCommentAction A_SmallRegularText">ответить</div>
-    <%= link_to "редактировать", edit_admin_comment_path(comment), class:"A_PlantCommentAction A_SmallRegularText" %>
-    <%= button_to "удалить", [:admin, comment], method: :delete, class:"destroy A_PlantCommentAction A_SmallRegularText" %>
+    <% if comment.user == current_user %>
+      <%= link_to "редактировать", edit_plant_comment_path(comment), class:"A_PlantCommentAction A_SmallRegularText" %>
+      <%= button_to "удалить", [plant, comment], method: :delete, class:"destroy A_PlantCommentAction A_SmallRegularText" %>
+    <% end %>
   </div>
-<% end %>
+
 
 <div class="commentReplies">
     <% comment.replies.each do |reply| %>
-      <%= render reply, partial: "admin/comments/comment", comment: reply, plant: plant %>
+      <%= render reply, partial: "comments/comment", comment: reply, plant: plant %>
     <% end%>
   </div>
 

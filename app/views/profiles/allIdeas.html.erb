@@ -1,0 +1,24 @@
+<div class="S_BodyPadding">
+  <div class="M_TitleWrapper">
+    <div class="W_PlantProfileTitle">
+  
+      <div class="A_Title">
+        Мысли <%= @user.profile.username %>
+      </div>
+    </div>
+  </div>
+
+    <div class="C_ProfileCardsIdeas">
+      <div class="M_ProfileIdeasPlus">
+        <%= link_to new_idea_path do %>
+          <%= image_tag "base/profile_ideas_plus.svg", class: "Q_Edit" %>
+        <% end %>
+      </div>
+
+      <% @ideas.reverse.each do |idea| %>
+        <%= link_to idea, class: 'link' do %>
+          <%= render partial: 'ideas/ideaPreviewProfile', locals: { idea: idea } %>
+        <% end %>
+      <% end %>
+    </div>
+</div>

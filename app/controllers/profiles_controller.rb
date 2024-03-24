@@ -11,6 +11,11 @@ class ProfilesController < ApplicationController
     @followings = @profile.user.following_users
   end
 
+  def allIdeas
+    @user = User.find(params[:id])  # Fetch the user with the specified ID
+    @ideas = @user.ideas  # Fetch ideas belonging to the specified user
+  end
+
   def edit
   end
 

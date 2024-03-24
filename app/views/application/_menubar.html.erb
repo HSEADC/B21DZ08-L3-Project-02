@@ -13,15 +13,15 @@
     <div class="W_MenuSections">
         
           <% if user_signed_in? %>
-              <div class="A_MenuSection <%= 'active' if current_page?(welcome_exchange_path) %>">
+              <div class="A_MenuSection A_RegularText <%= 'active' if current_page?(welcome_exchange_path) %>">
                 <%= link_to "обмен", welcome_exchange_url%>
               </div>
 
-              <div class="A_MenuSection <%= 'active' if current_page?(welcome_myswaps_path) %>">
+              <div class="A_MenuSection A_RegularText <%= 'active' if current_page?(welcome_myswaps_path) %>">
                 <%= link_to "мои предложения", welcome_myswaps_url %>
               </div>
 
-              <div class="A_MenuSection <%= 'active' if current_page?(welcome_wishlist_path) %>">
+              <div class="A_MenuSection A_RegularText <%= 'active' if current_page?(welcome_wishlist_path) %>">
                 <%= link_to "вишлист", welcome_wishlist_url %>
               </div>
 
@@ -38,19 +38,19 @@
 
                   <div class="C_DropMenuSections hidden" data-menu-target="additionalMenu">
                     <%= link_to profile_path(current_user.profile) do %>
-                      <div class="A_DropMenuSection">профиль</div>
+                      <div class="A_DropMenuSection A_RegularText">профиль</div>
                     <% end %>
 
                     <%= link_to welcome_savedIdeas_url do %>
-                      <div class="A_DropMenuSection">сохранённые мысли</div>
+                      <div class="A_DropMenuSection A_RegularText">сохранённые мысли</div>
                     <% end %>
 
                     <%= link_to welcome_support_url do %>
-                      <div class="A_DropMenuSection">поддержка</div>
+                      <div class="A_DropMenuSection A_RegularText">поддержка</div>
                     <% end %>
 
                     <%= link_to destroy_user_session_path, method: :delete do %>
-                      <div class="A_DropMenuSection">выйти</div>
+                      <div class="A_DropMenuSection A_RegularText">выйти</div>
                     <% end %>
                 </div>
 

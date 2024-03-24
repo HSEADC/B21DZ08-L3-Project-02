@@ -84,9 +84,10 @@
             <%= image_tag "base/more_arrow.svg", class: "Q_Edit" %>
           </div>
 
-          <div class="W_CommentButton A_SmallRegularText">
-            <%= link_to "Написать комментарий", new_plant_comment_path(@plant), class: "A_CommentButton" %>
+          <div>
+            <%= render "comments/form", comment: Comment.new, plant: @plant %>
           </div>
+          
       </div>
 
           
