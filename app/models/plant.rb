@@ -3,6 +3,10 @@ class Plant < ApplicationRecord
     has_many :notes
     belongs_to :user
     belongs_to :shelf
+
+    has_many :likes
+    has_many :users_who_liked, through: :likes, source: 'user'
+
     mount_uploader :plant_image, PlantImageUploader
 
     acts_as_taggable_on :tags

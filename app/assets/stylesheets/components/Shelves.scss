@@ -47,6 +47,8 @@
     }
   }
 }
+
+
 // ПОЛКА В ФИДЕ
 .M_ShelfPreviewCard{
   display: flex;
@@ -111,4 +113,84 @@
 }
 .grey-color{
   color: var(--grey-text);
+}
+
+
+// ПОЛКА В ПРОФИЛЕ
+.M_ShelfCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--white);
+  width: 30.42vw;
+  height: 15.63vw;
+  border-radius: 14px;
+  padding: 30px;
+
+  .W_ShelfPreview_Info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .W_ShelfSideInfo{
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 11.98vw;
+      .A_MediumText{
+        width: 10.42vw;
+      }
+    }
+
+    .A_PreviewGoToShelfLink{
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--black);
+      align-items: center;
+
+      &:hover {
+        opacity: 70%;
+      }
+    }
+  }
+  .С_ShelfCardImages{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    position: relative;
+
+    .W_ShelfCardImages{
+      border-radius: 8px;
+      overflow: hidden;
+
+      &:first-child{
+        width: 9.27vw;
+        height: 12.5vw;
+      }
+
+      &:nth-child(2n){
+        width: 5.63vw;
+        height: 4.48vw;
+        position: relative;
+        bottom: 0%; 
+        left: 0%;
+      }
+
+      &:nth-child(3n){
+        width: 5.63vw;
+        height: 7.6vw;
+        position: relative;
+        left: calc(-8px - 5.63vw);
+        top: calc(8px + 4.48vw)
+      }
+
+      .Q_ShelfCardImage{
+        height: -webkit-fill-available;
+        width:-webkit-fill-available;
+        object-fit: cover;
+      }
+    }
+  }
 }

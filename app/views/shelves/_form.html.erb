@@ -11,20 +11,46 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+  <div class="O_Form">
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="M_FormSection">
 
+      <div class="M_FormSectionName A_SecondTitle">
+          Основное
+      </div>
 
+      <div class="M_FormSectionContent">
+        <div>
+          <%= form.label "Название полки", class: "A_MediumText", style: "display: block" %>
+          <br>
+          <%= form.text_field :title, class: "A_FormInput A_RegularText", placeholder: "Мои кактусы" %>
+        </div>
 
- 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+        <div>
+          <%= form.label "Описание полки", class: "A_MediumText", style: "display: block" %>
+          <br>
+          <%= form.text_area :description, class: "A_FormInput A_RegularText", placeholder: "Мои кактусы" %>
+        </div>
+      </div>
+
+    </div>
+
+    <% @shelf.plants.each do |plant| %>
+      <div class="M_SwapCard">
+        <%= check_box_tag "shelf[plant_ids][]", plant.id %>
+        <%= render partial: 'plants/plantPreview', locals: { plant: plant } %>
+      </div>
+    <% end %>
+
+      <div class="M_FormSection">
+    
+      <div class="M_FormSectionName">
+      </div>
+
+      <div>
+        <%= form.submit "Сохранить", class:"A_SubmitButton A_MediumText"%>
+      </div>
+      <% end %>
+    </div>
+  
+</div>

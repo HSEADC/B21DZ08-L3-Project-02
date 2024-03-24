@@ -22,8 +22,13 @@
 
   <div class="W_PlantProfileContent">
     <div class="W_PlantProfileInfo">
-      <div class="A_AverageRegularText">Владелец: <%= @plant.user.profile.username %></div>
-      <div class="A_RegularText"><%= plant.description %></div>
+      <div class="A_AverageRegularText">
+      Владелец:
+          <%= link_to profile_path(@plant.user.profile) do %>
+             <%= @plant.user.profile.username %>
+          <% end %>
+      </div>
+      <div class="A_RegularText A_PlantProfileDescription"><%= plant.description %></div>
       <div>
         <% if plant.tag_list.present? %>
           <div class="A_Tag A_RegularText"><%= plant.tag_list %></div>
@@ -60,8 +65,7 @@
         <div class="W_PlantCommentsContent">
           <div class="M_PlantLikeComment">
             <div class="M_PlantLikeCommentItem">
-              <%= image_tag "base/like.svg", class: "Q_Like" %>
-              <div class="A_AverageRegularText">12</div>
+            <%= render 'plants/like_button', plant: plant %>
             </div>
             <div class="M_PlantLikeCommentItem">
               <%= image_tag "base/comment.svg", class: "Q_Comment" %>

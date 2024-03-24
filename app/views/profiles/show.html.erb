@@ -1,35 +1,35 @@
 <div class="S_BodyPadding">
   <div class="M_TitleWrapper">
-    <div class="M_ProfileTitle">
-    <div class="W_ProfileTitle">
-    <div class="A_ProfileAvatar">
-        <% if @profile.profile_image.file.present? %>
-         <%= image_tag @profile.profile_image.url, class: "A_ProfileAvatarImg" %>
-        <% else %>
-         <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg", alt: "Default Avatar" %>
-        <% end %>
-  </div>
-      <div class="A_Title"><%= @profile.username %></div>
-    </div>
+    <div class="W_ProfileHead">
+      <div class="M_ProfileTitle">
+        <div class="W_ProfileTitle">
+          <div class="A_ProfileAvatar">
+              <% if @profile.profile_image.file.present? %>
+              <%= image_tag @profile.profile_image.url, class: "A_ProfileAvatarImg" %>
+              <% else %>
+              <%= image_tag "base/profile_image.png", class: "A_ProfileAvatarImg", alt: "Default Avatar" %>
+              <% end %>
+          </div>
+          <div class="A_Title"><%= @profile.username %></div>
+        </div>
 
-      <% if @profile.user == current_user %>
-        <%= link_to edit_profile_path(@profile) do %>
-          <%= image_tag "base/settings.svg", class: "Q_Icon" %>
+        <% if @profile.user == current_user %>
+          <%= link_to edit_profile_path(@profile) do %>
+            <%= image_tag "base/settings.svg", class: "Q_Icon" %>
+          <% end %>
         <% end %>
+      </div>
+      
+      <% if current_user != @profile.user %>
+      <% if current_user.followers.include?(@profile.user) %>
+        <%= button_to 'Отписаться', unfollow_user_path(@profile.user), method: :delete, class: 'A_MediumText A_FollowButton' %>
+      <% else %>
+        <%= button_to 'Подписаться', follow_user_path(@profile.user), method: :post, class: 'A_MediumText A_FollowButton' %>
       <% end %>
+      <% end %>
+
     </div>
   </div>
-
-
-
-
-  <% if current_user != @profile.user %>
-  <% if current_user.followers.include?(@profile.user) %>
-    <%= button_to 'Отписаться', unfollow_user_path(@profile.user), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= button_to 'Подписаться', follow_user_path(@profile.user), method: :post, class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
 
 <h2>Подписки</h2>
 <% if @followers.any? %>
@@ -138,12 +138,11 @@
 </div>
 
   <div class="C_ProfileShelves hidden" data-profile-target="shelves">
-    <% @shelves.each do |shelf| %>
-      <h2><%= shelf.title %></h2>
-      <% shelf.plants.each do |plant| %>
-        <p><%= plant.name %></p>
-      <% end %>
-    <% end %>
+  <% @shelves.each do |shelf| %>
+        <%= render partial: 'shelves/shelfPreviewProfile', locals: { shelf: shelf } %>
+  <% end %>
   </div>
+
+
 </div>
 </div>

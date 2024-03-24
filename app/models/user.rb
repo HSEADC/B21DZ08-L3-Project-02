@@ -15,6 +15,9 @@ class User < ApplicationRecord
   has_many :swaps
   has_many :shelves
 
+  has_many :likes
+  has_many :plants_i_liked, through: :likes, source: 'plant'
+
   has_and_belongs_to_many :savedIdeas, class_name: 'Idea', foreign_key: 'user_id'
 
   has_one :profile

@@ -6,9 +6,34 @@
         <%= shelf.title %>
       </div>
 
-      <div class="A_AddPadding A_RegularText">
-        <%= shelf.description %>
+      <% if @shelf.user == current_user %>
+        <%= link_to edit_shelf_path(@shelf) do %>
+          <%= image_tag "base/plant_edit.svg", class: "Q_Icon" %>
+        <% end %>
+        
+        <%= button_to @shelf, method: :delete, class: "custom-button" do %>
+          <%= image_tag "base/plant_bin.svg", class: "Q_Icon" %>
+        <% end %>
+      <% end %>
+
+    </div>
+
+      <div class="W_PlantProfileContent">
+        <div class="W_PlantProfileInfo">
+          <% if @shelf.user != current_user %>
+            <%= link_to profile_path(shelf.user.profile) do %>
+              <div class="A_RegularText grey-color">
+                полка <%= shelf.user.profile.username %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class="A_AddPadding A_RegularText">
+            <%= shelf.description %>
+          </div>
+        </div>
       </div>
+      
     
       <div class="C_ProfileCards">
         <% @plants.each do |plant| %>

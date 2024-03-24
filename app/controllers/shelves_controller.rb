@@ -68,6 +68,6 @@ class ShelvesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def shelf_params
-      params.require(:shelf).permit(:title, :description, :user_id).merge(user_id: current_user.id)
+      params.require(:shelf).permit(:title, :description, :user_id, plant_ids: []).merge(user_id: current_user.id)
     end
 end

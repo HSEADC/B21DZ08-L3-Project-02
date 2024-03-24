@@ -20,21 +20,26 @@
     height: 100%;
   }
 }
-
-.M_ProfileTitle {
-  display: flex;
+.W_ProfileHead{
+  display:flex;
   flex-direction: row;
+  justify-content: space-between;
 
-  .W_ProfileTitle {
+  .M_ProfileTitle {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 12px;
-  }
 
-  .Q_Edit {
-    width: 24px;
-    height: 24px;
+    .W_ProfileTitle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .Q_Edit {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 .C_ProfileCardsIdeas {
@@ -153,6 +158,12 @@
   flex-wrap: wrap;
   column-gap: 1.04vw;
   row-gap: 30px;
+}
+.C_ProfileShelves{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.83vw;
+  row-gap: 1.67vw;
 }
 .M_ProfilePlantsBlock {
   display: flex;

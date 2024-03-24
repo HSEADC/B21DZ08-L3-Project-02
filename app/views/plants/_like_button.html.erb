@@ -1,0 +1,20 @@
+<%
+  plant_user_ids = []
+
+  plant.users_who_liked.each do |user|
+    plant_user_ids << user.id
+  end
+
+  counter = plant_user_ids.count > 0 ? plant_user_ids.count : ''
+
+  if current_user
+    link_text = plant_user_ids.include?(current_user.id) ? "♥ #{counter}" : "♡ #{counter}"
+  else
+    link_text = "♡ #{counter}"
+  end
+%>
+<%= turbo_frame_tag dom_id(plant) do %>
+  <br><br>
+  <%= link_to link_text, toggle_like_plant_path(plant) %>
+  <br><br>
+<% end %>

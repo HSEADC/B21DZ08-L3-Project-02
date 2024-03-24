@@ -15,6 +15,7 @@ class Ability
       can :read, Idea
       # Add other permissions for guest users as needed
     else
+      can :toggle_like, Plant
       can :toggle_savedIdeas, Idea
       can :manage, Plant, user_id: user.id
       can :manage, Idea, user_id: user.id
@@ -26,6 +27,7 @@ class Ability
 
     can :read, Profile
     can :read, Plant
+    can :read, Shelf
     can :read, Idea
     can :create, Comment
   end

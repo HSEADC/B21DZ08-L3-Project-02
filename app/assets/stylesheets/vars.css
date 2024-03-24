@@ -16,8 +16,8 @@
   --button-grey: #707070;
   --button-grey-hover: #535353;
   --footer-background: linear-gradient(
-    rgba(250, 250, 250, 1),
-    rgba(251, 244, 233, 1) 12%
+    rgba(240, 240, 240, 1),
+    rgba(255, 255, 255, 1) 7%
   );
   --main-background: linear-gradient(
       0deg,

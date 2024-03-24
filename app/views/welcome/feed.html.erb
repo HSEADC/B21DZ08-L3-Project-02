@@ -23,7 +23,7 @@
       <div class="C_FeedIdeaCards">
       <% shelf_counter = 0 %> 
         <% @shelves.each do |shelf| %>
-          <% if shelf_counter <= 3 %>
+          <% if shelf_counter < 3 %>
             <% if shelf.plants.count >= 3 %>
               <%= render partial: 'shelves/shelfPreviewFeed', locals: { shelf: shelf } %>
             <% end %>

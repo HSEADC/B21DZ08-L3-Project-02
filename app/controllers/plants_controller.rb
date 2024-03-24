@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_plant, only: %i[ show edit update destroy ]
+  before_action :set_plant, only: %i[ show edit update destroy toggle_like liked_by_user ]
 
   # GET /plants or /plants.json
   def index
@@ -17,6 +17,7 @@ class PlantsController < ApplicationController
 
   # GET /plants/1 or /plants/1.json
   def show
+    @plant = Plant.find(params[:id])
     @user = @plant.user
     if @plant && @plant.shelf
       @plants = @plant.shelf.plants
@@ -34,7 +35,7 @@ class PlantsController < ApplicationController
   def edit
   end
 
-  # POST /plants or /plants.json
+  # plant /plants or /plants.json
   def create
     @plant = Plant.new(plant_params)
     @profile = current_user.profile
@@ -74,6 +75,17 @@ class PlantsController < ApplicationController
     end
   end
 
+  def toggle_like
+    plant_user_ids = @plant.users_who_liked.pluck(:id)
+  
+    if plant_user_ids.include?(current_user.id)
+      current_user.plants_i_liked.delete(@plant)
+    else
+      current_user.plants_i_liked << @plant
+    end
+  
+    set_plant
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plant
